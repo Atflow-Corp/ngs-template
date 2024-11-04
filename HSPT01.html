@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGS 유전자 검사</title>
+    <link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo" width="50%" height="50%"> <!-- 로고 이미지 경로 -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">NGS 유전자 검사</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">임상 검색</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">서비스 소개</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	<style>
+.navbar-nav .nav-link {
+    position: relative; /* 위치 조정용 */
+    color: #ffffff; /* 기본 글자색 */
+    padding: 10px 12px; /* 패딩 추가 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #7F56D9; /* 선택된 링크 배경색 */
+    color: #F4EBFF; /* 선택된 링크 글자색 */
+    border-radius: 6px; /* 둥글게 */
+    padding: 10px 20px; /* 여백을 8px 추가 */
+}
+</style>
+
+   <div class="container my-4" style="padding-top: 64px; padding-bottom: 50px;">
+  <div class="row">
+    <div class="col-md-6 d-flex flex-column">
+      <h1 class="ngs-title">NGS 유전자 검사를 시작해보세요</h1>
+      <p class="description">
+        개인의 유전체를 상세히 분석하여 다양한 유전적 특징과 연관된 질환에 대한 정보를 얻을 수 있습니다.
+      </p>
+      <ul class="features">
+  <li><img src="img/check.png" width="28px" height="28px" class="check-icon"> 개인화된 건강 관리</li>
+  <li><img src="img/check.png" width="28px" height="28px" class="check-icon"> 유전적 위험 예측</li>
+  <li><img src="img/check.png" width="28px" height="28px" class="check-icon"> 진단 및 치료 지원</li>
+  <li><img src="img/check.png" width="28px" height="28px" class="check-icon"> 가족력 및 후손 관리</li>
+</ul>
+      <div class="buttons">
+        <button class="primary-btn"><b>NGS 검사를 의뢰할게요</b></button>
+        <button class="secondary-btn"><b>이미 검사를 했어요. 결과를 등록하고 임상 추천을 받고 싶어요</b></button>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex align-items-start">
+      <img src="img/hsp01.png" alt="Description" class="img-fluid" />
+    </div>
+  </div>
+</div>
+	  <!-- Footer -->
+   <footer class="footer text-center">
+    <div class="container">
+      <p class="mb-0">© 2024 EverTri. All rights reserved.</p>
+    </div>
+  </footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>

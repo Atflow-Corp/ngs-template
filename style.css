@@ -1,0 +1,703 @@
+@charset "UTF-8";
+/* CSS Document */
+.btn-primary {
+    background-color: #7F56D9; /* 버튼 배경색 변경 */
+    border-color: #7F56D9; /* 버튼 테두리 색 변경 */
+    color: #ffffff; /* 버튼 텍스트 흰색 */
+}
+
+.btn-primary:hover {
+    background-color: #6b46b0; /* 호버 시 더 어두운 색상 */
+    border-color: #6b46b0;
+}
+.custom-btn {
+    background-color: #7F56D9; /* 커스텀 배경색 */
+    color: #ffffff; /* 흰색 텍스트 */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.custom-btn:hover {
+    background-color: #6b46b0; /* 호버 시 색상 */
+}
+/* 전체 폰트 설정 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #FFFFFF;
+}
+
+/* Header 스타일 */
+/* Header 스타일 */
+.navbar {
+    background-color: #6941C6 !important;  /* 상단 네비게이션 배경색 강제 적용 */
+    padding: 1rem;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;  /* 네비게이션 링크 흰색 강제 적용 */
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #eeeeee !important;  /* 링크 호버 색상 */
+}
+
+
+.navbar-brand img {
+    width: 150px;  /* 로고 크기 */
+}
+
+
+/* 메인 타이틀 및 텍스트 스타일 */
+h1, h2, h3 {
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 체크리스트 스타일 */
+.checkitems {
+    margin-top: 2rem;
+}
+
+.checkitems .rowcheckmark {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkitems .checkmark_one {
+    background-color: #7F56D9;  /* 버튼 배경색 #7F56D9 */
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+.checkitems .checkmark_one img {
+    width: 20px;
+    height: 20px;
+}
+
+.checkitems p {
+    color: #333333;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 로그인 모듈 스타일 */
+.login-module {
+    width: 360px; /* 고정 너비 */
+    background-color: #ffffff;
+}
+
+/* 전체 배경색을 설정하고 가운데 정렬을 위해 컨테이너 스타일 */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+/* 푸터 스타일 */
+.footer {
+    position: fixed; /* 고정 위치 */
+    bottom: 0; /* 화면 하단에 위치 */
+    left: 0; /* 좌측 정렬 */
+    width: 100%; /* 전체 비 */
+    background-color: #FFFFFF; /* 배경색 */
+    color: #344054; /* 텍스트 색상 */
+    padding: 1rem; /* 여백 */
+}
+/* 환영 메시지 스타일 */
+.welcome-message {
+    font-size: 14px; /* 폰트 크기 설정 */
+    color: #344054; /* 텍스트 색상 설정 */
+    margin: 0 0 1rem 0; /* 아래쪽 마진 추가 */
+}
+
+/* 레이블 스타일 */
+.id-label, .password-label {
+    font-size: 14px; /* 폰트 크기 설정 */
+    color: #344054; /* 텍스트 색상 설정 */
+}
+
+/* 이용 약관 동의 모듈 스타일 */
+.terms-module {
+    width: 360px; /* 고정 너비 */
+    background-color: #ffffff; /* 배경색 설정 */
+}
+/* 체크박스 그룹 스타일 */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+/* 커스텀 체크박스 스타일 */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-input {
+    width: 16px; /* 체크박스 너비 */
+    height: 16px; /* 체크박스 높이 */
+    appearance: none; /* 기본 스타일 제거 */
+    background-color: #ffffff; /* 체크박스 배경색 */
+    border: 1px solid #D0D5DD; /* 체크박스 테두리 색상 */
+    border-radius: 4px; /* 체크박스 모서리 둥글게 */
+    margin-right: 8px; /* 체크박스와 레이블 간격 */
+    position: relative; /* 크 모양을 위한 위치 설정 */
+}
+
+/* 체크된 상태 스타일 */
+.checkbox-input:checked {
+    background-color: #F9F5FF; /* 체크된 배경색 */
+    border-color: #7F56D9; /* 체크된 테두리 색상 */
+}
+
+/* 체크 표시 추가 */
+.checkbox-input:checked::after {
+    content: ''; /* 체크 마크의 내용 */
+    position: absolute; /* 체크 마크의 위치 설정 */
+    left: 4px; /* 체크 마크의 왼쪽 여백 */
+    top: 2px; /* 체크 마크의 위쪽 여백 */
+    width: 5px; /* 체크 표시의 너비 */
+    height: 8px; /* 체크 표시의 높이 */
+    border: solid #7F56D9; /* 체크 표시의 색상 */
+    border-width: 0 2px 2px 0; /* 체크 표시의 두께 조정 */
+    transform: rotate(45deg); /* 체크 모양을 대각선으로 회전 */
+}
+
+/* 체크박스 레이블 스타일 */
+.checkbox-label {
+    color: #344054; /* 텍스트 색상 */
+}
+
+
+/* 구분선 스타일 */
+.divider {
+    background-color: #EAECF0; /* 구분선 색상 */
+    width: 360px; /* 너비 */
+    height: 1px; /* 높이 */
+    margin: 16px 0; /* 위아래 여백 */
+}
+
+/* 약관 목록 스타일 */
+.terms-list {
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding-left: 0; /* 왼쪽 패딩 제거 */
+}
+
+.terms-list li {
+    margin-bottom: 8px; /* 항목 간격 */
+}
+
+/* 하이퍼링크 스타일 */
+a {
+    color: #7F56D9; /* 하이퍼링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover {
+    text-decoration: underline; /* 호버 시 밑줄 추가 (선택 사항) */
+}
+
+.terms-agreement {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    justify-content: space-between; /* 위쪽과 아래쪽 요소 간의 공간 균등 배분 */
+    height: 100%; /* 전체 높이를 차지하게 설정 */
+}
+
+.agree-button {
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    padding: 10px 20px; /* 여백 */
+    font-size: 16px; /* 폰트 크기 */
+    cursor: pointer; /* 포인터 커서 */
+    margin-top: auto; /* 자동 마진으로 하단으로 밀기 */
+}
+
+.agree-button:hover {
+    background-color: #6b46b0; /* 호버 시 배경색 변경 */
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #7F56D9; /* 선택된 링크 배경색 */
+    color: #F4EBFF; /* 선택된 링크 글자색 */
+    border-radius: 4px; /* 모서리 둥글게 */
+}
+/* 메인 컨테이너 */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단에 붙이기 */
+    padding: 32px 0;
+}
+
+
+.content-header {
+    margin-bottom: 32px; /* 간격 설정 */
+}
+
+.heading-title {
+    color: #101828;
+    margin-bottom: 16px; /* 간격 설정 */
+}
+ /* 기본 설정 */
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #FFFFFF;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    background-color: #7F56D9;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #ffffff;
+    padding: 10px 12px;
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #7F56D9;
+    color: #F4EBFF;
+    border-radius: 6px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* 오른쪽으로 밀기 */
+}
+
+.notification-btn {
+    background: none;
+    border: none;
+    margin-right: 16px;
+}
+
+.username {
+    color: #ffffff;
+}
+
+/* 메인 컨테이너 */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단에 붙이기 */
+    padding: 32px 0;
+}
+
+.content-box {
+	display: flex;
+padding: 24px 0px 96px 0px;
+flex-direction: column;
+justify-content: center;
+align-items: left;
+gap: 64px;
+align-self: stretch;
+    background-color: white;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-header {
+    margin-bottom: 32px; /* 간격 설정 */
+}
+
+.heading-title {
+    color: #101828;
+    margin-bottom: 16px; /* 간격 설정 */
+}
+
+.content-text {
+    color: #344054;
+    margin-bottom: 32px; /* 간격 설정 */
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 32px; /* 간격 설정 */
+}
+
+.feature-list li {
+    margin-bottom: 12px; /* 간격 설정 */
+}
+
+.call-to-action {
+    margin-bottom: 40px; /* 간격 설정 */
+}
+
+/* 버튼 스타일 */
+.buttons {
+    display: flex; /* 버튼을 플렉스 박스로 배치 */
+    flex-direction: column; /* 세로로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    margin-top: 32px; /* 버튼 위 여백 추가 (필요 시 조정) */
+}
+
+.primary-btn {
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: white; /* 버튼 글자색 */
+    border: none; /* 테두리 없음 */
+    border-radius: 8px; /* 둥글게 */
+    padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
+    margin-bottom: 12px; /* 아래 버튼과의 간격 */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    transition: background-color 0.3s ease; /* 호버 시 배경색 전환 효과 */
+    width: auto; /* 자동 크기 조정 */
+}
+
+.secondary-btn {
+    background-color: white; /* 두 번째 버튼 배경색 */
+    color: #344054; /* 두 번째 버튼 글자색 */
+    border: 1px solid #D0D5DD; /* 테두리 색상 */
+    border-radius: 8px; /* 둥글게 */
+    padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    width: auto; /* 자동 크기 조정 */
+}
+
+
+
+.primary-btn:hover {
+    background-color: #6b46b0; /* 호버 시 색상 */
+}
+
+
+.title {
+    color: #101828; /* 타이틀 색상 */
+    margin-bottom: 32px; /* 아래 여백 */
+}
+
+.description {
+    color: #344054; /* 본문 색상 */
+    margin-bottom: 32px; /* 아래 여백 */
+}
+
+.features {
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin-bottom: 32px; /* 아래 여백 */
+}
+
+.features li {
+    margin-bottom: 16px; /* 각 항목 사이 여백 */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    gap: 16px; /* 버튼 사이 여백 */
+}
+
+.btn {
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+}
+
+.custom-btn {
+    border: 1px solid #D0D5DD; /* 테두리 색상 */
+    background-color: #ffffff; /* 배경색 */
+    color: #344054; /* 텍스트 색상 */
+    border-radius: 8px; /* 둥글게 */
+}
+
+.features li {
+    margin-bottom: 16px; /* 각 항목 사이 여백 */
+    display: flex; /* Flexbox로 설정 */
+    align-items: center; /* 수직 정렬 */
+}
+
+.check-icon {
+    margin-right: 12px; /* 이미지와 텍스트 사이의 간격 */
+}
+.ngs-title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 44px; /* 122.222% */
+    letter-spacing: -0.72px;
+    color: #101828; /* 제목 색상, 필요에 따라 조정 */
+    margin-bottom: 32px; /* 하단 여백, 필요에 따라 조정 */
+}
+.patient-list-title {
+    font-size: 24px; /* 타이틀 폰트 크기 */
+    font-weight: 700; /* 타이틀 폰트 두께 */
+    text-align: left; /* 좌측 정렬 */
+	margin: 0;
+}
+
+.table-container {
+    margin-top: 20px; /* 테이블과 타이틀 간격 */
+    overflow-x: auto; /* 테이블이 화면 너비를 초과할 경우 스크롤 추가 */
+}
+
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 73px;
+    padding: 16px 24px;
+    border: 1px solid #D0D5DD;
+    box-sizing: border-box;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+.search-container {
+    margin-top: 32px; /* 타이틀과 검색창 간의 여백 */
+}
+
+.search-box {
+    display: flex; /* 플렉스 박스로 설정 */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left:14px;
+	padding-right:14px;
+    width: 400px; /* 검색창 너비 */
+    height: 44px; /* 검색창 높이 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    border-radius: 8px; /* 둥글 */
+    border: 1px solid var(--Gray-300, #D0D5DD); /* 테두리 색상 */
+    background: var(--White, #FFF); /* 배경색 */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
+}
+
+.search-icon {
+    margin-right: 8px; /* 아이콘과 입력창 간의 간격 */
+}
+
+.search-input {
+    width: 100%; /* 입력창 너비 100% */
+    height: 100%; /* 입력창 높이 100% */
+    border: none; /* 테두리 없음 */
+    outline: none; /* 포커스 시 아웃라인 없음 */
+    font-size: 16px; /* 폰트 크기 */
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th {
+    height: 44px;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--Gray-200, #EAECF0);
+    background: var(--Gray-50, #F9FAFB);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700; /* 헤더의 글씨를 더 두껍게 설정 */
+    color: #101828;
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+
+
+.td {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #101828;
+    padding: 12px 24px;
+}
+
+.primary-btn-new {
+    padding: 8px; /* 버튼의 상하좌우 여백 */
+	font-size: 14px;
+	width: 108px;
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 포인터 */
+}
+
+.secondary-btn-new {
+    padding: 8px; /* 버튼의 상하좌우 여백 */
+	font-size: 14px;
+	width: 108px;
+    background-color: #ffffff; /* 버튼 배경색 */
+    color: #344054; /* 버튼 텍스트 색상 */
+    border: 1px solid var(--Gray-300, #D0D5DD); /* 테두리 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 포인터 */
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+.pagination {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.page-btn {
+    padding: 8px 12px;
+    border: 1px solid #D0D5DD;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    border-radius: 4px;
+}
+
+.page-btn:hover {
+    background-color: #f0f4f8;
+}
+
+.page-btn:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* 버튼 스타일 */
+.btn-custom-purple {
+    background-color: #7F56D9;  /* 활성화 상태의 배경색 (보라색) */
+    color: white;
+    border: none;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-custom-purple:hover {
+    background-color: #6941C6;
+    color: white;
+}
+
+.btn-custom-purple:disabled {
+    background-color: #E9D7FE !important;  /* disabled 상태의 배경색 */
+    color: white !important;  /* disabled 상태의 텍스트 색상 */
+    cursor: not-allowed;
+}
+
+/* 파일 업로드 버튼 스타일 */
+.file-upload-btn {
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    color: #344054;
+    background-color: #ffffff;
+    font-style: 14px;
+    font-weight: 700;
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 설명 텍스트 스타일 */
+.description {
+    color: #344054;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* 회원가입 모듈 스타일 */
+.join-module {
+    background-color: #FFFFFF;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 섹션 스타일 */
+.title-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.join-type-module {
+    background-color: #FFFFFF;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1);
+    border-radius: 12px;
+}
+
+.type-select-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.type-select-btn:hover {
+    border-color: #7F56D9;
+    background-color: #F9F5FF;
+}
+
+.type-select-btn h5 {
+    color: #344054;
+    font-weight: 600;
+}
+
+.type-select-btn p {
+    font-size: 14px;
+}
+
+/* Input focus styles */
+input:focus,
+select:focus,
+textarea:focus {
+    border: 1px solid #D6BBFB !important;
+    border-radius: 8px !important;
+    background: #FFFFFF !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF !important;
+    outline: none !important;
+}
+
+/* For input groups (like address search) */
+.input-group input:focus {
+    z-index: 4;  /* 포커스 시 input이 버튼 위로 오도록 */
+}
+
+/* Address Search Modal Styles */
+.address-search-modal .modal-content {
+    width: 640px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+}
+
+.address-search-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+}
+
+/* 모달 열기 스크립트도 수정 */

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보 입력 - CANCERT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+         <!-- Custom CSS -->
+         <link href="style.css" rel="stylesheet">
+</head>
+<body>
+ <!-- Navigation Bar -->
+ <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo" width="50%" height="50%"> <!-- 로고 이미지 경로 -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">NGS 유전자 검사</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">임상 검색</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">서비스 소개</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <style>
+.navbar-nav .nav-link {
+    position: relative; /* 위치 조정용 */
+    color: #ffffff; /* 기본 글자색 */
+    padding: 10px 12px; /* 패딩 추가 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #7F56D9; /* 선택된 링크 배경색 */
+    color: #F4EBFF; /* 선택된 링크 글자색 */
+    border-radius: 6px; /* 둥글게 */
+    padding: 10px 20px; /* 여백을 8px 추가 */
+}
+
+/* 새로운 버튼 스타일 추가 */
+.btn-custom-purple {
+    background-color: #7F56D9;
+    color: white;
+    border: none;
+}
+
+.btn-custom-purple:hover {
+    background-color: #6941C6;  /* 호버 시 약간 더 진한 보라색 */
+    color: white;
+}
+
+/* 비활성화된 로그인 버튼 스타일 */
+.btn-custom-purple:disabled {
+    background-color: #D0D5DD !important;  /* 회색 */
+    color: #667085 !important;  /* 텍스트 색상 */
+    cursor: not-allowed;
+}
+</style>
+
+    <div class="container">
+        <div class="join-module p-4 rounded">
+            <div class="title-section">
+                <h2>회원정보 입력</h2>
+                <p class="description">캔서트 서비스 이용을 위한 기본 정보를 입력해주세요.</p>
+            </div>
+
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">이름</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">성별</label>
+                    <div class="d-flex gap-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                            <label class="form-check-label" for="male">남성</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">여성</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="birthdate" class="form-label">생년월일</label>
+                    <input type="date" class="form-control" id="birthdate" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">휴대폰 번호</label>
+                    <input type="tel" class="form-control" id="phone" value="01012345678" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">주소</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="address" required>
+                        <button class="btn btn-outline-secondary" type="button" id="searchAddress">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="text-muted mt-2" style="font-size: 14px; color: #475467;">
+                        입력하신 주소를 기준으로, 가까운 병원을 우선하여 임상 시험을 추천해 드립니다.
+                    </p>
+                </div>
+
+                <button type="submit" class="btn btn-custom-purple w-100" id="registerButton" disabled>
+                    <b>회원가입 완료</b>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const registerButton = document.getElementById('registerButton');
+
+        function checkFormValidity() {
+            const isValid = form.checkValidity();
+            registerButton.disabled = !isValid;
+        }
+
+        form.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('input', checkFormValidity);
+        });
+
+        // 주소 검색 버튼 클릭 이벤트
+        document.getElementById('searchAddress').addEventListener('click', function() {
+            const modal = new bootstrap.Modal(document.getElementById('addressSearchModal'));
+            modal.show();
+        });
+    </script>
+
+    <!-- 기존 코드 아래에 모달 추가 -->
+    <div class="modal fade" id="addressSearchModal" tabindex="-1" aria-labelledby="addressSearchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered address-search-modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="modal-title">주소 검색</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="search-input-wrapper mb-4">
+                        <input type="text" class="form-control" placeholder="도로명 주소 또는 지번 주소를 입력해주세요">
+                    </div>
+                    <div id="addressResults">
+                        <!-- 주소 검색 결과가 여기에 동적으로 표시됩니다 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보 입력 - CANCERT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+     <!-- Custom CSS -->
+     <link href="style.css" rel="stylesheet">
+     
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo" width="50%" height="50%"> <!-- 로고 이미지 경로 -->
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">NGS 유전자 검사</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">임상 검색</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">서비스 소개</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+            <style>
+        .navbar-nav .nav-link {
+            position: relative; /* 위치 조정용 */
+            color: #ffffff; /* 기본 글자색 */
+            padding: 10px 12px; /* 패딩 추가 */
+            text-decoration: none; /* 밑줄 제거 */
+        }
+        
+        .navbar-nav .nav-link.active {
+            background-color: #7F56D9; /* 선택된 링크 배경색 */
+            color: #F4EBFF; /* 선택된 링크 글자색 */
+            border-radius: 6px; /* 둥글게 */
+            padding: 10px 20px; /* 여백을 8px 추가 */
+        }
+        
+        /* 새로운 버튼 스타일 추가 */
+        .btn-custom-purple {
+            background-color: #7F56D9;
+            color: white;
+            border: none;
+        }
+        
+        .btn-custom-purple:hover {
+            background-color: #6941C6;  /* 호버 시 약간 더 진한 보라색 */
+            color: white;
+        }
+        
+        /* 비활성화된 로그인 버튼 스타일 */
+        .btn-custom-purple:disabled {
+            background-color: #D0D5DD !important;  /* 회색 */
+            color: #667085 !important;  /* 텍스트 색상 */
+            cursor: not-allowed;
+        }
+        </style>
+    <div class="container">
+        <div class="join-module p-4 rounded">
+            <div class="title-section">
+                <h2>회원정보 입력</h2>
+                <p class="description">캔서트 서비스 이용을 위한 기본 정보를 입력해주세요.</p>
+            </div>
+
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">이름</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">휴대폰 번호</label>
+                    <input type="tel" class="form-control" id="phone" value="01012345678" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="hospital" class="form-label">소속 병원</label>
+                    <input type="text" class="form-control" id="hospital" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="role" class="form-label">의료진 구분</label>
+                    <select class="form-select" id="role" required>
+                        <option value="">선택해주세요</option>
+                        <option value="doctor">의사</option>
+                        <option value="nurse">간호사</option>
+                        <option value="technician">테크니션</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="department" class="form-label">진료 과목</label>
+                    <select class="form-select" id="department" required>
+                        <option value="">선택해주세요</option>
+                        <option value="internal">내과</option>
+                        <option value="surgery">외과</option>
+                        <option value="oncology">종양내과</option>
+                        <option value="hematology">혈액종양내과</option>
+                        <option value="radiation">방사선종양학과</option>
+                        <option value="pathology">병리과</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="license" class="form-label">의사면허번호</label>
+                    <input type="text" class="form-control" id="license" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">면허증 첨부</label>
+                    <div>
+                        <button type="button" class="file-upload-btn">
+                            <img src="img/upload.png" alt="Upload" width="20" height="20">
+                            면허증 파일첨부
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-custom-purple w-100" id="registerButton" disabled>
+                    <b>회원가입 완료</b>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 모든 필수 입력 필드를 확인하고 버튼 활성화/비활성화
+        const form = document.querySelector('form');
+        const registerButton = document.getElementById('registerButton');
+
+        function checkFormValidity() {
+            const isValid = form.checkValidity();
+            registerButton.disabled = !isValid;
+        }
+
+        // 모든 입력 필드에 대해 이벤트 리스너 추가
+        form.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('input', checkFormValidity);
+        });
+    </script>
+</body>
+</html> 
