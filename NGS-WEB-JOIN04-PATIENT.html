@@ -67,6 +67,44 @@
     color: #667085 !important;  /* 텍스트 색상 */
     cursor: not-allowed;
 }
+
+/* 주소 검색 버튼 스타일 */
+.btn-outline-secondary {
+    background-color: white;
+    border: 1px solid #D0D5DD;
+    color: #344054;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #F9FAFB;
+    border: 1px solid #D0D5DD;
+    color: #344054;
+}
+
+/* 주소 검색 모달 크기 조정 */
+.address-search-modal {
+    max-width: 800px;  /* 원하는 넓이로 조정 가능 */
+    width: 100%;
+}
+
+/* 검색 입력 영역 넓이 조정 */
+.search-input-wrapper {
+    width: 100%;
+}
+
+.search-input-wrapper .input-group {
+    width: 100%;
+}
+
+.search-input-wrapper .form-control {
+    flex: 1;  /* 입력창이 최대한의 공간을 차지하도록 설정 */
+}
+
+/* 검색 버튼 최소 넓이 설정 */
+.search-input-wrapper .btn {
+    min-width: auto;  /* 버튼이 내용만큼만 차지하도록 설정 */
+    white-space: nowrap;
+}
 </style>
 
     <div class="container">
@@ -110,7 +148,7 @@
                     <label for="address" class="form-label">주소</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="address" required>
-                        <button class="btn btn-outline-secondary" type="button" id="searchAddress">
+                        <button class="btn btn-outline-secondary" type="button" id="searchAddress" style="background-color: white; border: 1px solid #D0D5DD; color: #344054;">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -148,20 +186,39 @@
         });
     </script>
 
-    <!-- 기존 코드 아래에 모달 추가 -->
+    <!-- 기존 코드 아래에 모달 ���가 -->
     <div class="modal fade" id="addressSearchModal" tabindex="-1" aria-labelledby="addressSearchModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered address-search-modal">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body p-4">
+                    <!-- 검색 영역 - 좌측 정렬 적용 -->
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="modal-title">주소 검색</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title text-start">주소 검색</h5>
+                        
                     </div>
-                    <div class="search-input-wrapper mb-4">
-                        <input type="text" class="form-control" placeholder="도로명 주소 또는 지번 주소를 입력해주세요">
+                    
+                    <!-- 검색 입력 영역 - 좌측 정렬 적용 -->
+                    <div class="search-input-wrapper mb-4 text-start w-100">
+                        <div class="input-group">
+                            <input type="text" class="form-control text-start" id="addressSearchInput" 
+                                   placeholder="도로명 주소 또는 지번 주소를 입력해주세요" style="text-align: left;">
+                            <button class="btn btn-outline-secondary" type="button" id="addressSearchBtn">
+                                <img src="img/search.png" alt="검색" width="20" height="20">
+                            </button>
+                        </div>
                     </div>
-                    <div id="addressResults">
-                        <!-- 주소 검색 결과가 여기에 동적으로 표시됩니다 -->
+
+                    <!-- 검색 과 영역 - 좌측 정렬 적용 -->
+                    <div id="addressResults" class="border rounded p-3 mb-4 text-start" style="height: 300px; overflow-y: auto;">
+                        <div class="text-muted">
+                            검색어를 입력하시면 주소 검색 결과가 표시됩니다.
+                        </div>
+                    </div>
+
+                    <!-- 하단 버튼 영역 -->
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-white" style="color: #344054; background-color: white; border: 1px solid #D0D5DD;" data-bs-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-custom-purple" id="confirmAddress">확인</button>
                     </div>
                 </div>
             </div>
