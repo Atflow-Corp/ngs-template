@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGS 유전자 검사</title>
+    <link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo" width="50%" height="50%"> <!-- 로고 이미지 경로 -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">NGS 유전자 검사</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">임상 검색</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">서비스 소개</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              사용자 이름
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">로그아웃</a></li>
+              <li><a class="dropdown-item" href="#">내 정보 보기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	<style>
+.navbar-nav .nav-link {
+    position: relative; /* 위치 조정용 */
+    color: #ffffff; /* 기본 글자색 */
+    padding: 10px 12px; /* 패딩 추가 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #7F56D9; /* 선택된 링크 배경색 */
+    color: #F4EBFF; /* 선택된 링크 글자색 */
+    border-radius: 6px; /* 둥글게 */
+    padding: 10px 20px; /* 여백을 8px 추가 */
+}
+
+/* Breadcrumb style */
+.breadcrumb {
+    color: #667085;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 24px;
+}
+  /* Breadcrumb 박스 스타일 */
+  .breadcrumb-box {
+            display: flex;
+            padding: 32px;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            border-bottom: 1px solid var(--Gray-200, #EAECF0);
+            background: var(--White, #FFF);
+            justify-content: left; /* 가운데 정렬 */
+        }
+
+
+/* Page layout */
+ /* 전체 레이아웃 스타일 */
+ .main-layout {
+            display: flex;
+            width: 1280px; /* 전체 너비 */
+            margin: 0 auto; /* 가운데 정렬 */
+            align-items: flex-start; /* 내부 내용은 좌측 정렬 */
+        }
+
+.left-box {
+    display: flex;
+    width: 312px; /* 고정 너비 */
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start; /* 좌측 정렬 */
+    gap: 32px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-right: 1px solid var(--Gray-200, #EAECF0);
+    background: var(--White, #FFF);
+}
+
+.left-box h1 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 38px;
+}
+
+.left-box img {
+    width: 32px;
+    height: auto;
+    margin-right: 16px;
+    margin-left: 16px;
+    align-items: right;
+}
+
+.left-box p {
+    color: #344054;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.left-box .label {
+    color: #344054;
+    font-size: 14px;
+}
+
+.right-box {
+    display: flex;
+    flex: 1; /* 비율로 전체 공간을 채우도록 설정 */
+    flex-direction: column;
+    align-items: flex-start; /* 좌측 정렬 */
+    gap: 16px;
+    border-radius: 8px;
+    background: var(--White, #FFF);
+    padding: 32px; /* 패딩 추가 */
+    border-bottom: 1px solid var(--Gray-200, #EAECF0);
+}
+
+.right-box .label {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.right-box .card {
+    display: flex;
+    width: 100%; /* 부모 요소의 너비에 맞게 조정 */
+    max-width: 520px; /* 최대 너비 520px */
+    align-items: flex-start; /* align-items를 flex-start로 수정 */
+    gap: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--Brand-500, #9E77ED);
+    background: var(--White, #FFF);
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.right-box .card img {
+    width: 16px;
+    height: auto;
+}
+
+.right-box .card p {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.right-box .card .button {
+    border-radius: 8px;
+    border: 1px solid var(--Brand-600, #7F56D9);
+    background: var(--Brand-600, #7F56D9);
+}
+
+ /* 이름 스타일 */
+ .patient-name {
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 38px; /* 126.667% */
+            width: 196px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            white-space: nowrap; /* 줄바꿈 방지 */
+        }
+
+        /* 환자 번호 스타일 */
+        .patient-id {
+            color: #344054;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* 나이 스타일 */
+        .label {
+            font-size: 14px;
+        }
+
+        .value {
+            font-size: 16px;
+        }
+
+        .delete-icon {
+            width: 32px;  /* 아이콘 너비 */
+            height: 32px; /* 아이콘 높이 */
+            display: inline-block; /* 인라인 블록으로 설정 */
+        }
+
+        /* 버튼 스타일을 초기화 */
+        .btn {
+            background: none; /* 배경 제거 */
+            border: none; /* 테두리 제거 */
+            padding: 0; /* 패딩 제거 */
+            cursor: pointer; /* 커서 포인터로 변경 */
+            line-height: 0; /* 버튼의 높이를 0으로 설정하여 아이콘 크기 조정 */
+        }
+    </style>
+
+
+</head>
+<body>
+   
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-box" style="width: calc(1280px); margin: 0 auto;">
+        <ol class="breadcrumb" style="margin: 0;">
+            <li class="breadcrumb-item">NGS 유전자 검사</li>
+            <li class="breadcrumb-item active" aria-current="page">환자 상세보기</li>
+        </ol>
+    </div>
+
+    <!-- 메인 레이아웃 -->
+    <div class="main-layout">
+        <!-- 좌측 박스 -->
+        <div class="left-box">
+            <div class="patient-name">
+                환자 이름
+                <button type="button" class="btn p-0" onclick="deletePatientInfo()">
+                    <img src="img/delete.png" alt="삭제" class="delete-icon">
+                </button>
+            </div>
+            <div class="patient-id">193884910</div>
+            <div style="margin-top: 32px;">
+                <label class="label">나이</label>
+                <div class="value">29세 (YYYY.MM.DD)</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">성별</label>
+                <div class="value">남</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">휴대폰 번호</label>
+                <div class="value">010-0000-1111</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">주소</label>
+                <div class="value">서울시 송파구 잠실동</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">담당의</label>
+                <div class="value">김우빈</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">정보 조회 권한</label>
+                <div class="value">김우빈, 이성은, 박민지</div>
+            </div>
+        </div> <!-- 좌측 박스 닫기 -->
+
+        <!-- 우측 박스 (진행상황 및 업데이트 내용) -->
+        <div class="right-box" style="flex: 1; padding: 32px; margin-left: auto;">
+            <div class="right-box-label" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <h6 style="margin: 0; text-align: left;">NGS 검사 결과</h6>
+                <div class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+                    <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; justify-content: space-between; align-items: left;">
+                        <img src="img/_File upload icon.png" alt="파일 업로드 아이콘" style="width: 28px; height: auto; margin-right: 8px;">
+                        <div style="flex: 1; margin-left: 8px;">
+                            <strong>업로드한 검사 결과지</strong>
+                            <p style="margin: 0;">담당자의 승인을 기다리고 있습니다. 승인에는 최대 2일 정도 소요될 수 있으며, 승인이 지연될 경우에는 고객센터로 연락 바랍니다. (02-0000-9999)</p>
+                            <p style="margin: 0;">승인 후에 조건에 부합하는 임상을 추천받을 수 있습니다.</p>
+                        </div>
+                        <button class="btn btn-primary" style="margin-left: 16px;">PDF 보기</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function deletePatientInfo() {
+            if (confirm("환자 정보를 삭제하시겠습니까?")) {
+                // 삭제 로직을 여기에 추가
+                alert("환자 정보가 삭제되었습니다."); // 예시로 알림창 표시
+                // 실제 삭제 로직을 구현하려면 서버와의 통신이 필요합니다.
+            }
+        }
+    </script>
+</body>
+</html>
