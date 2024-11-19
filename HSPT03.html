@@ -251,6 +251,7 @@
             padding: 16px;
             width: calc(100% - 40px); /* Adjust width to match right-box-card */
             margin-left: 20px; /* Align with right-box-card */
+            min-width: 300px; /* Set minimum width for the card */
         }
     </style>
 
@@ -306,15 +307,16 @@
 
         <!-- 우측 박스 (진행상황 및 업데이트 내용) -->
         <div class="right-box" style="flex: 1; padding: 32px; margin-left: auto;">
+            <!-- 첫 번째 카드 영역 -->
             <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px;">
                 <h6 style="margin: 0; text-align: left;"><b>NGS 검사 결과</b></h6>
-                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard()">
-                    <img id="toggle-icon" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-1')">
+                    <img id="toggle-icon-1" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
                 </button> <!-- 접기/펼치기 버튼 -->
             </div>
             
-            <div id="right-box-card" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
-                <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; justify-content: space-between; align-items: flex-start;">
+            <div id="right-box-card-1" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+                <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; justify-content: space-between; align-items: flex-start; min-width: 300px;">
                     <img src="img/file_upload.png" alt="파일 업로드 아이콘" style="width: 34px; height: auto; margin-right: 8px;">
                     <div style="flex: 1; margin-left: 8px;">
                         <strong>업로드한 검사 결과지</strong>
@@ -327,6 +329,43 @@
                 </div>
             </div>
 
+            <!-- 두 번째 카드 영역 -->
+            <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; margin-top: 24px;">
+                <h6 style="margin: 0; text-align: left;"><b>NGS 유전자 검사 의뢰서</b></h6>
+                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-2')">
+                    <img id="toggle-icon-2" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+                </button> <!-- 접기/펼치기 버튼 -->
+            </div>
+            
+            <div id="right-box-card-2" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+                <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; justify-content: space-between; align-items: flex-start; min-width: 500px;">
+                    <img src="img/file_upload2.png" alt="파일 업로드 아이콘" style="width: 34px; height: auto; margin-right: 8px;">
+                    <div style="flex: 1; margin-left: 8px;">
+                        <strong>검사 의뢰서 제출 완료</strong>
+                        <p style="margin: 0;">승인 완료 (2024.1.19.)</p>
+                    </div>
+                    <div style="margin-left: auto;">
+                        <button class="btn-view">의뢰서 수정</button> <!-- PDF 보기 버튼 추가 -->
+                    </div>
+                </div>
+            </div>
+      <!-- 세 번째 카드 영역: NGS 진행현황 조회 -->
+    <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; margin-top: 24px;">
+        <h6 style="margin: 0; text-align: left;"><b>NGS 검사의뢰 진행현황 조회</b></h6>
+        <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-3')">
+            <img id="toggle-icon-3" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+        </button> <!-- 접기/펼치기 버튼 -->
+    </div>
+    
+    <div id="right-box-card-3" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+        <div style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; flex-direction: column; align-items: flex-start; min-width: 500px;">
+            <div style="position: relative; width: 100%;">
+                <input type="text" placeholder="검색어를 입력하세요" style="width: 100%; padding: 8px 40px 8px 8px; margin-bottom: 8px; border: 1px solid var(--Gray-300, #D0D5DD); border-radius: 4px;">
+                <img src="img/search.png" alt="검색" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 20px; height: auto;">
+            </div>
+            <p style="margin: 0; font-size: 14px;">가이드: 여기에 가이드가 추가됩니다. 무엇을 검색하라고 할 지 알려줍니다. (패키지번호 등)</p>
+        </div>
+    </div>
             <!-- NGS 기반 추천 임상 레이블 및 접기/펼치기 버튼 -->
             <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
                 <h6 style="margin: 0; text-align: left;"><b>NGS 기반 추천 임상</b></h6>
@@ -373,9 +412,9 @@
             }
         }
 
-        function toggleCard() {
-            const card = document.getElementById('right-box-card');
-            const icon = document.getElementById('toggle-icon');
+        function toggleCard(cardId) {
+            const card = document.getElementById(cardId);
+            const icon = document.getElementById(cardId === 'right-box-card-1' ? 'toggle-icon-1' : 'toggle-icon-2');
             
             if (card.style.display === 'none') {
                 card.style.display = 'flex'; // Show the card
