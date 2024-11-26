@@ -227,6 +227,7 @@
             box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
             transition: background 0.3s; /* 배경색 변화에 대한 트랜지션 */
             font-weight: 800;
+            margin-top: 16px;
         }
 
         .btn-view:hover {
@@ -253,6 +254,65 @@
             margin-left: 20px; /* Align with right-box-card */
             min-width: 300px; /* Set minimum width for the card */
         }
+
+        .chip-container {
+            display: flex;
+            gap: 8px; /* Space between chips */
+            margin: 8px 0; /* Margin for the chip container */
+        }
+
+        .chip {
+            border-radius: 50px; /* Make the chip circular */
+            padding: 6px 12px; /* Padding for the chip */
+            font-size: 14px; /* Font size for the chip */
+            display: inline-block; /* Display inline */
+        }
+
+        .step {
+            color: #93370D; /* Text color */
+            font-weight: 800; /* Font weight */
+            font-size: 18px; /* Font size */
+            padding: 10px; /* Padding for better spacing */
+            border-radius: 50px; /* Rounded background */
+            display: inline-block; /* Make it inline-block to fit the content */
+            position: relative; /* Positioning for the background */
+        }
+        .phase-1 {
+        background-color: #FFFAEB; /* Background color for 1상 */
+    }
+
+    .phase-2 {
+        background-color: #FEF0C7; /* Background color for 2상 */
+    }
+
+    .phase-3 {
+        background-color: #FEDF89; /* Background color for 3상 */
+    }
+
+    .phase-4 {
+        background-color: #FEC84B; /* Background color for 4상 */
+    }
+
+    .name {
+        color: #101828; /* Text color */
+        font-weight: 800; /* Font weight */
+        font-size: 18px; /* Font size */
+        margin-bottom: 24px; /* Spacing below the name field */
+    }
+
+    .chip-container {
+        margin-bottom: 24px; /* Spacing below the chip container */
+    }
+
+    .created_by,
+    .approve-date,
+    .trial-organ,
+    .eligibility_age,
+    .eligibiltiy_gender,
+    .inclusion_criteria {
+        margin-bottom: 8px; /* Spacing between these fields */
+        font-size: 14px; /* Font size for these fields */
+    }
     </style>
 
 
@@ -377,17 +437,34 @@
             <!-- 카드 목록 -->
             <div id="card-list" class="card-list" style="display: flex; flex-direction: column; padding: var(--spacing-3xl, 24px) var(--spacing-3xl, 24px) 28px var(--spacing-3xl, 24px); align-items: flex-start; gap: var(--spacing-3xl, 24px); align-self: stretch;">
                 <div class="common-card">
-                    <p>추천 임상 내용 1</p>
+                    <p class="step trial-phase phase-1">1상</p> <!-- step필드 -->
+                    <p class="name">재발성/불응성 혈액암이 있는 시험대상자를 대상으로 한 PRT2527 단독요법 및 자누브루티닙과의 병용요법에 대한 제1상 공개, 다기관, 안전성 및 유효성 임상시험</p> <!-- name필드 -->
+                    
+                    <div class="chip-container">
+                        <span class="chip" style="background-color: #e0f7fa; color: #00796b;">#국외개발</span> <!-- Chip for international_development_category 필드-->
+                        <span class="chip" style="background-color: #ffe0b2; color: #e65100;">#PRT2527</span> <!-- Chip for generic_codename 필드 -->
+                        <span class="chip" style="background-color: #f1f8e9; color: #33691e;">#2.파니투무맙</span> <!-- Chip for product_codename 필드-->
+                    </div>
+
+                    <p class="created_by">의뢰자 : 피피디디벨럽먼트피티이엘티디</p> <!-- submitted_by 필드 -->
+                    <p class="approve-date">승인일 : 2023.12.14</p> <!-- approved_at 필드 -->
+                    <p class="trial-organ">실시기관 : 고려대학교 의과대학 부속 구로병원, 삼성서울병원, 국립암센터, 학교법인 고려중앙학원 고려대학교의과대학부속병원, 학교법인가톨릭학원 가톨릭대학교 서울성모병원, 연세대학교의과대학세브란스병원, 재단법인아산사회복지재단서울아산병원, 서울대학교병원</p> <!-- institution_name 필드 -->
+                    <p class="eligibility_age">대상 연령: □18세 미만 ■18세 이상~65세 미만 ■65세 이상</p>
+                    <p class="eligibiltiy_gender">대상 성별: □남 ■여</p>
+                    <p class="inclusion_criteria"> 선정기준 : "1)스크리닝 검사 당시 연령이 만 19세 이상 만 50세 이하인 건강한 성인 남성\n",<br>
+                        "2)체중이 50.0 kg 이상 100.0 kg 이하이면서, 체질량지수(BMI)가 18.0 이상 27.0 이하인 자 \n- BMI(kg/m2) = 체중(kg) / {신장(m)}2\n",<br>
+                        "3)본 임상시험에 대한 자세한 설명을 듣고 완전히 이해한 후, 자의로 참여를 결정하고 스크리닝 검사 전에 서면동의한 자",<br>
+                        "4)신체검사, 임상검사, 문진 등으로 시험자 판단 시 본 임상시험의 대상자로 적합한 자",<br>
+                        "5)임상시험 전 기간 동안 참여할 능력과 의지가 있는 자"</p>
+                    <div style="margin-left: auto;">
+                        <button class="btn-view">상담 신청하기</button> <!-- 상담 신청하기 버튼 -->
+                    </div>
                 </div>
-                <div class="common-card">
-                    <p>추천 임상 내용 2</p>
-                </div>
-                <!-- 추가 카드 내용 -->
             </div>
 
             <!-- 더 보기 버튼 -->
             <div style="margin-top: 16px; text-align: center;">
-                <button class="btn-more" style="display: flex; padding: 12px 20px; justify-content: center; align-items: center; gap: 8px; border-radius: 8px; border: 1px solid var(--Gray-300, #D0D5DD); background: var(--White, #FFF); box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);">
+                <button class="btn-more" onclick="loadMoreCards()" style="display: flex; padding: 12px 20px; justify-content: center; align-items: center; gap: 8px; border-radius: 8px; border: 1px solid var(--Gray-300, #D0D5DD); background: var(--White, #FFF); box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);">
                     더 보기 (1/22)
                 </button>
             </div>
@@ -435,6 +512,22 @@
             } else {
                 cardList.style.display = 'none'; // Hide the card list
                 iconList.src = 'img/chevron-up.png'; // Change icon to up
+            }
+        }
+
+        let currentPage = 1; // Track the current page
+        const totalPages = 22; // Total number of pages (example)
+
+        function loadMoreCards() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                // Logic to fetch and append new cards goes here
+                // For example, you could use AJAX to fetch new card data and append it to the card-list
+                console.log(`Loading more cards for page ${currentPage}`);
+                // Update button text if needed
+                document.querySelector('.btn-more').innerText = `더 보기 (${currentPage}/${totalPages})`;
+            } else {
+                alert("더 이상 결과가 없습니다."); // Alert when no more results
             }
         }
     </script>
