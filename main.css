@@ -831,138 +831,138 @@ textarea:focus {
 
  /* 이름 스타일 */
  .patient-name {
-            font-size: 30px;
-            font-weight: 800;
-            line-height: 38px; /* 126.667% */
-            width: 196px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            white-space: nowrap; /* 줄바꿈 방지 */
-        }
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 38px; /* 126.667% */
+    width: 196px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
 
-        /* 환자 번호 스타일 */
-        .patient-id {
-            color: #344054;
-            font-size: 16px;
-            font-weight: 400;
-        }
+/* 환자 번호 스타일 */
+.patient-id {
+    color: #344054;
+    font-size: 16px;
+    font-weight: 400;
+}
 
-        /* 나이 스타일 */
-        .label {
-            font-size: 14px;
-        }
+/* 나이 스타일 */
+.label {
+    font-size: 14px;
+}
 
-        .value {
-            font-size: 16px;
-        }
+.value {
+    font-size: 16px;
+}
 
-        .delete-icon {
-            width: 32px;  /* 아이콘 너비 */
-            height: 32px; /* 아이콘 높이 */
-            display: inline-block; /* 인라인 블록으로 설정 */
-        }
+.delete-icon {
+    width: 32px;  /* 아이콘 너비 */
+    height: 32px; /* 아이콘 높이 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+}
 
-        /* 버튼 스타일을 초기화 */
-        .btn {
-            background: none; /* 배경 제거 */
-            border: none; /* 테두리 제거 */
-            padding: 0; /* 패딩 제거 */
-            cursor: pointer; /* 커서 포인터로 변경 */
-            line-height: 0; /* 버튼의 높이를 0으로 설정하여 아이콘 크기 조정 */
-        }
+/* 버튼 스타일을 초기화 */
+.btn {
+    background: none; /* 배경 제거 */
+    border: none; /* 테두리 제거 */
+    padding: 0; /* 패딩 제거 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    line-height: 0; /* 버튼의 높이를 0으로 설정하여 아이콘 크기 조정 */
+}
 
-        .btn-view {
-            border-radius: 8px;
-            border: 1px solid var(--Brand-600, #7F56D9);
-            background: var(--Brand-600, #7F56D9);
-            color: #FFFFFF; /* 버튼 텍스트 색상 */
-            padding: 8px 16px; /* 버튼 패딩 */
-            cursor: pointer; /* 커서 포인터로 변경 */
-            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
-            transition: background 0.3s; /* 배경색 변화에 대한 트랜지션 */
-            font-weight: 800;
-            marin-top: 16px;
-        }
+.btn-view {
+    border-radius: 8px;
+    border: 1px solid var(--Brand-600, #7F56D9);
+    background: var(--Brand-600, #7F56D9);
+    color: #FFFFFF; /* 버튼 텍스트 색상 */
+    padding: 8px 16px; /* 버튼 패딩 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
+    transition: background 0.3s; /* 배경색 변화에 대한 트랜지션 */
+    font-weight: 800;
+    margin-top: 16px;
+}
 
-        .btn-view:hover {
-            background: var(--Brand-500, #9E77ED); /* 호버 시 배경색 변화 */
-        }
-        .btn-more {
-            border-radius: 8px;
-            border: 1px solid var(--Gray-300, #D0D5DD);
-            background: var(--White, #FFF);
-            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-            color: var(--Gray-700, #344054);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 800;
-            line-height: 24px; /* 150% */
-        }
+.btn-view:hover {
+    background: var(--Brand-500, #9E77ED); /* 호버 시 배경색 변화 */
+}
+.btn-more {
+    border-radius: 8px;
+    border: 1px solid var(--Gray-300, #D0D5DD);
+    background: var(--White, #FFF);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: var(--Gray-700, #344054);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 24px; /* 150% */
+}
 
-        .common-card {
-            border-radius: 16px;
-            border: 1px solid var(--Gray-200, #EAECF0);
-            background: var(--White, #FFF);
-            padding: 16px;
-            width: calc(100% - 40px); /* Adjust width to match right-box-card */
-            margin-left: 20px; /* Align with right-box-card */
-            min-width: 300px; /* Set minimum width for the card */
-        }
-        .chip-container {
-            display: flex;
-            gap: 8px; /* Space between chips */
-            margin: 8px 0; /* Margin for the chip container */
-        }
-    
-        .chip {
-            border-radius: 50px; /* Make the chip circular */
-            padding: 6px 12px; /* Padding for the chip */
-            font-size: 14px; /* Font size for the chip */
-            display: inline-block; /* Display inline */
-        }
-        .step {
-            color: #93370D; /* Text color */
-            font-weight: 800; /* Font weight */
-            font-size: 18px; /* Font size */
-            padding: 10px; /* Padding for better spacing */
-            border-radius: 50px; /* Rounded background */
-            display: inline-block; /* Make it inline-block to fit the content */
-            position: relative; /* Positioning for the background */
-        }
-        .phase-1 {
-            background-color: #FFFAEB; /* Background color for 1상 */
-        }
-    
-        .phase-2 {
-            background-color: #FEF0C7; /* Background color for 2상 */
-        }
-    
-        .phase-3 {
-            background-color: #FEDF89; /* Background color for 3상 */
-        }
-    
-        .phase-4 {
-            background-color: #FEC84B; /* Background color for 4상 */
-        }
+.common-card {
+    border-radius: 16px;
+    border: 1px solid var(--Gray-200, #EAECF0);
+    background: var(--White, #FFF);
+    padding: 16px;
+    width: calc(100% - 40px); /* Adjust width to match right-box-card */
+    margin-left: 20px; /* Align with right-box-card */
+    min-width: 300px; /* Set minimum width for the card */
+}
+.chip-container {
+    display: flex;
+    gap: 8px; /* Space between chips */
+    margin: 8px 0; /* Margin for the chip container */
+}
 
-        .name {
-            color: #101828; /* Text color */
-            font-weight: 800; /* Font weight */
-            font-size: 18px; /* Font size */
-            margin-bottom: 24px; /* Spacing below the name field */
-        }
-    
-        .chip-container {
-            margin-bottom: 24px; /* Spacing below the chip container */
-        }
-    
-        .created_by,
-        .approve-date,
-        .trial-organ,
-        .eligibility_age,
-        .eligibiltiy_gender,
-        .inclusion_criteria {
-            margin-bottom: 8px; /* Spacing between these fields */
-            font-size: 14px; /* Font size for these fields */
-        }
+.chip {
+    border-radius: 50px; /* Make the chip circular */
+    padding: 6px 12px; /* Padding for the chip */
+    font-size: 14px; /* Font size for the chip */
+    display: inline-block; /* Display inline */
+}
+.step {
+    color: #93370D; /* Text color */
+    font-weight: 800; /* Font weight */
+    font-size: 18px; /* Font size */
+    padding: 10px; /* Padding for better spacing */
+    border-radius: 50px; /* Rounded background */
+    display: inline-block; /* Make it inline-block to fit the content */
+    position: relative; /* Positioning for the background */
+}
+.phase-1 {
+    background-color: #FFFAEB; /* Background color for 1상 */
+}
+
+.phase-2 {
+    background-color: #FEF0C7; /* Background color for 2상 */
+}
+
+.phase-3 {
+    background-color: #FEDF89; /* Background color for 3상 */
+}
+
+.phase-4 {
+    background-color: #FEC84B; /* Background color for 4상 */
+}
+
+.name {
+    color: #101828; /* Text color */
+    font-weight: 800; /* Font weight */
+    font-size: 18px; /* Font size */
+    margin-bottom: 24px; /* Spacing below the name field */
+}
+
+.chip-container {
+    margin-bottom: 24px; /* Spacing below the chip container */
+}
+
+.created_by,
+.approve-date,
+.trial-organ,
+.eligibility_age,
+.eligibiltiy_gender,
+.inclusion_criteria {
+    margin-bottom: 8px; /* Spacing between these fields */
+    font-size: 14px; /* Font size for these fields */
+}
