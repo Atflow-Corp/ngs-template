@@ -21,6 +21,171 @@
 .custom-btn:hover {
     background-color: #6b46b0; /* 호버 시 색상 */
 }
+
+
+.buttons {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    gap: 16px; /* 버튼 사이 여백 */
+}
+
+.btn {
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+}
+
+.custom-btn {
+    border: 1px solid #D0D5DD; /* 테두리 색상 */
+    background-color: #ffffff; /* 배경색 */
+    color: #344054; /* 텍스트 색상 */
+    border-radius: 8px; /* 둥글게 */
+}
+
+/* 버튼 스타일 */
+.buttons {
+    display: flex; /* 버튼을 플렉스 박스로 배치 */
+    flex-direction: column; /* 세로로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    margin-top: 32px; /* 버튼 위 여백 추가 (필요 시 조정) */
+}
+
+.primary-btn {
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: white; /* 버튼 글자색 */
+    border: none; /* 테두리 없음 */
+    border-radius: 8px; /* 둥글게 */
+    padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
+    margin-bottom: 12px; /* 아래 버튼과의 간격 */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    transition: background-color 0.3s ease; /* 호버 시 배경색 전환 효과 */
+    width: auto; /* 자동 크기 조정 */
+}
+
+.secondary-btn {
+    background-color: white; /* 두 번째 버튼 배경색 */
+    color: #344054; /* 두 번째 버튼 글자색 */
+    border: 1px solid #D0D5DD; /* 테두리 색상 */
+    border-radius: 8px; /* 둥글게 */
+    padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    width: auto; /* 자동 크기 조정 */
+}
+
+
+
+.primary-btn:hover {
+    background-color: #6b46b0; /* 호버 시 색상 */
+}
+
+
+/* 버튼 스타일 */
+.btn-custom-purple {
+    height: 44px;
+    display: flex;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--Primary-600, #7f56d9);
+    color: var(--White, #fff);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    border: none;
+    margin-bottom: 12px;
+}
+
+.btn-custom-purple:hover {
+    background-color: #6941C6;
+    color: white;
+}
+
+.btn-custom-purple:disabled {
+    background-color: #E9D7FE !important;  /* disabled 상태의 배경색 */
+    color: white !important;  /* disabled 상태의 텍스트 색상 */
+    cursor: not-allowed;
+}
+
+.modal .btn-custom-purple {
+    padding: 10px 18px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+/* 파일 업로드 버튼 스타일 */
+.file-upload-btn {
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    color: #344054;
+    background-color: #ffffff;
+    font-style: 14px;
+    font-weight: 700;
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.primary-btn-new {
+    padding: 8px; /* 버튼의 상하좌우 여백 */
+	font-size: 14px;
+	width: 108px;
+    background-color: #7F56D9; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 포인터 */
+}
+
+.secondary-btn-new {
+    padding: 8px; /* 버튼의 상하좌우 여백 */
+	font-size: 14px;
+	width: 108px;
+    background-color: #ffffff; /* 버튼 배경색 */
+    color: #344054; /* 버튼 텍스트 색상 */
+    border: 1px solid var(--Gray-300, #D0D5DD); /* 테두리 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 포인터 */
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+
+.btn-view {
+    border-radius: 8px;
+    border: 1px solid var(--Brand-600, #7F56D9);
+    background: var(--Brand-600, #7F56D9);
+    color: #FFFFFF; /* 버튼 텍스트 색상 */
+    padding: 8px 16px; /* 버튼 패딩 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
+    transition: background 0.3s; /* 배경색 변화에 대한 트랜지션 */
+    font-weight: 800;
+    margin-top: 16px;
+}
+
+.btn-view:hover {
+    background: var(--Brand-500, #9E77ED); /* 호버 시 배경색 변화 */
+}
+.btn-more {
+    border-radius: 8px;
+    border: 1px solid var(--Gray-300, #D0D5DD);
+    background: var(--White, #FFF);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: var(--Gray-700, #344054);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 24px; /* 150% */
+}
+
+
 /* 전체 폰트 설정 */
 body {
     font-family: 'Noto Sans KR', sans-serif;
@@ -78,6 +243,7 @@ body {
     align-items: center;
     margin-left: auto; /* 오른쪽으로 밀기 */
 }
+
 
 .notification-btn {
     background: none;
@@ -236,7 +402,7 @@ body, html {
 }
 
 .terms-list li {
-    margin-bottom: 8px; /* 항목 간격 */
+    margin-bottom: 16px; /* 항목 간격 */
 }
 
 /* 하이퍼링크 스타일 */
@@ -271,11 +437,7 @@ a:hover {
     background-color: #6b46b0; /* 호버 시 배경색 변경 */
 }
 
-.navbar-nav .nav-link.active {
-    background-color: #7F56D9; /* 선택된 링크 배경색 */
-    color: #F4EBFF; /* 선택된 링크 글자색 */
-    border-radius: 4px; /* 모서리 둥글게 */
-}
+
 /* 메인 컨테이너 */
 .main-container {
     display: flex;
@@ -351,43 +513,6 @@ align-self: stretch;
     margin-bottom: 40px; /* 간격 설정 */
 }
 
-/* 버튼 스타일 */
-.buttons {
-    display: flex; /* 버튼을 플렉스 박스로 배치 */
-    flex-direction: column; /* 세로로 배치 */
-    align-items: flex-start; /* 왼쪽 정렬 */
-    margin-top: 32px; /* 버튼 위 여백 추가 (필요 시 조정) */
-}
-
-.primary-btn {
-    background-color: #7F56D9; /* 버튼 배경색 */
-    color: white; /* 버튼 글자색 */
-    border: none; /* 테두리 없음 */
-    border-radius: 8px; /* 둥글게 */
-    padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
-    margin-bottom: 12px; /* 아래 버튼과의 간격 */
-    cursor: pointer; /* 마우스 커서 포인터로 변경 */
-    transition: background-color 0.3s ease; /* 호버 시 배경색 전환 효과 */
-    width: auto; /* 자동 크기 조정 */
-}
-
-.secondary-btn {
-    background-color: white; /* 두 번째 버튼 배경색 */
-    color: #344054; /* 두 번째 버튼 글자색 */
-    border: 1px solid #D0D5DD; /* 테두리 색상 */
-    border-radius: 8px; /* 둥글게 */
-    padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
-    cursor: pointer; /* 마우스 커서 포인터로 변경 */
-    width: auto; /* 자동 크기 조정 */
-}
-
-
-
-.primary-btn:hover {
-    background-color: #6b46b0; /* 호버 시 색상 */
-}
-
-
 .title {
     color: #101828; /* 타이틀 색상 */
     margin-bottom: 32px; /* 아래 여백 */
@@ -408,23 +533,6 @@ align-self: stretch;
     margin-bottom: 16px; /* 각 항목 사이 여백 */
 }
 
-.buttons {
-    display: flex;
-    flex-direction: column; /* 세로로 배치 */
-    gap: 16px; /* 버튼 사이 여백 */
-}
-
-.btn {
-    background-color: #7F56D9; /* 버튼 배경색 */
-    color: #ffffff; /* 버튼 텍스트 색상 */
-}
-
-.custom-btn {
-    border: 1px solid #D0D5DD; /* 테두리 색상 */
-    background-color: #ffffff; /* 배경색 */
-    color: #344054; /* 텍스트 색상 */
-    border-radius: 8px; /* 둥글게 */
-}
 
 .features li {
     margin-bottom: 16px; /* 각 항목 사이 여백 */
@@ -524,32 +632,6 @@ align-self: stretch;
     padding: 12px 24px;
 }
 
-.primary-btn-new {
-    padding: 8px; /* 버튼의 상하좌우 여백 */
-	font-size: 14px;
-	width: 108px;
-    background-color: #7F56D9; /* 버튼 배경색 */
-    color: #ffffff; /* 버튼 텍스트 색상 */
-    border: none; /* 테두리 제거 */
-    border-radius: 8px; /* 모서리 둥글게 */
-    cursor: pointer; /* 커서 포인터 */
-}
-
-.secondary-btn-new {
-    padding: 8px; /* 버튼의 상하좌우 여백 */
-	font-size: 14px;
-	width: 108px;
-    background-color: #ffffff; /* 버튼 배경색 */
-    color: #344054; /* 버튼 텍스트 색상 */
-    border: 1px solid var(--Gray-300, #D0D5DD); /* 테두리 */
-    border-radius: 8px; /* 모서리 둥글게 */
-    cursor: pointer; /* 커서 포인터 */
-}
-
-.button-group {
-    display: flex;
-    gap: 12px;
-}
 .pagination {
     display: flex;
     gap: 8px;
@@ -573,56 +655,6 @@ align-self: stretch;
 .page-btn:focus {
     outline: none;
     border-color: #007BFF;
-}
-
-/* 버튼 스타일 */
-.btn-custom-purple {
-    height: 44px;
-    display: flex;
-    padding: 16px 28px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 8px;
-    background: var(--Primary-600, #7f56d9);
-    color: var(--White, #fff);
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-    border: none;
-    margin-bottom: 12px;
-}
-
-.btn-custom-purple:hover {
-    background-color: #6941C6;
-    color: white;
-}
-
-.btn-custom-purple:disabled {
-    background-color: #E9D7FE !important;  /* disabled 상태의 배경색 */
-    color: white !important;  /* disabled 상태의 텍스트 색상 */
-    cursor: not-allowed;
-}
-
-.modal .btn-custom-purple {
-    padding: 10px 18px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-}
-
-/* 파일 업로드 버튼 스타일 */
-.file-upload-btn {
-    border: 1px solid #D0D5DD;
-    border-radius: 8px;
-    color: #344054;
-    background-color: #ffffff;
-    font-style: 14px;
-    font-weight: 700;
-    padding: 8px 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
 }
 
 /* 설명 텍스트 스타일 */
@@ -863,42 +895,6 @@ textarea:focus {
     display: inline-block; /* 인라인 블록으로 설정 */
 }
 
-/* 버튼 스타일을 초기화 */
-.btn {
-    background: none; /* 배경 제거 */
-    border: none; /* 테두리 제거 */
-    padding: 0; /* 패딩 제거 */
-    cursor: pointer; /* 커서 포인터로 변경 */
-    line-height: 0; /* 버튼의 높이를 0으로 설정하여 아이콘 크기 조정 */
-}
-
-.btn-view {
-    border-radius: 8px;
-    border: 1px solid var(--Brand-600, #7F56D9);
-    background: var(--Brand-600, #7F56D9);
-    color: #FFFFFF; /* 버튼 텍스트 색상 */
-    padding: 8px 16px; /* 버튼 패딩 */
-    cursor: pointer; /* 커서 포인터로 변경 */
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
-    transition: background 0.3s; /* 배경색 변화에 대한 트랜지션 */
-    font-weight: 800;
-    margin-top: 16px;
-}
-
-.btn-view:hover {
-    background: var(--Brand-500, #9E77ED); /* 호버 시 배경색 변화 */
-}
-.btn-more {
-    border-radius: 8px;
-    border: 1px solid var(--Gray-300, #D0D5DD);
-    background: var(--White, #FFF);
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    color: var(--Gray-700, #344054);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 24px; /* 150% */
-}
 
 .common-card {
     border-radius: 16px;
