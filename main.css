@@ -79,6 +79,26 @@
     margin-bottom: 12px;
 }
 
+.btn-custom-white {
+    height: 44px;
+    display: flex;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: var(#344054);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--Gray-300, #D0D5DD);
+    background: var(--White, #FFF);
+
+/* Shadow/xs */
+box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
 .btn-custom-purple:hover {
     background-color: #6941C6;
     color: white;
@@ -123,6 +143,19 @@
 }
 
    /* 파일명 표시 스타일 */
+.file-name {
+    display: none; /* Initially hidden */
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent; /* No border initially */
+}
+
+.file-name.active {
+    display: flex; /* Show when active */
+    border: 1px solid var(--Gray-300, #D0D5DD); /* Add border when active */
+}
+
 .file-name {
     margin-top: 5px;
     color: #101828; /* 텍스트 색상 */
@@ -239,6 +272,8 @@ box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 
 /* 검색 입력 영역 넓이 조정 */
 .search-input-wrapper {
+    display: flex; /* Ensure the wrapper uses flexbox */
+    align-items: center; /* Align items vertically in the center */
     width: 100%;
 }
 
@@ -247,11 +282,18 @@ box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 
 .search-input-wrapper .form-control {
-    flex: 1;  /* 입력창이 최대한의 공간을 차지하도록 설정 */
+    flex: 1;  /* Input takes maximum space */
+    margin-right: 0; /* Remove any right margin */
+    border: none; /* 테두리 없음 */
+    outline: none; /* 포커스 시 아웃라인 없음 */
+    font-size: 16px; /* 폰트 크기 */
 }
 
 /* 검색 버튼 최소 넓이 설정 */
 .search-input-wrapper .btn {
+    margin-left: 0; /* Remove any left margin */
+    display: flex; /* Ensure button is a flex container */
+    align-items: center; /* Center the icon vertically */
     min-width: auto;  /* 버튼이 내용만큼만 차지하도록 설정 */
     white-space: nowrap;
 }
@@ -774,7 +816,6 @@ textarea:focus {
 /* For input groups (like address search) */
 .input-group input:focus {
     z-index: 4;  /* 포커스 시 input이 버튼 위로 오도록 */
-    width: 100%;
 }
 
 /* Address Search Modal Styles */
@@ -1021,4 +1062,145 @@ textarea:focus {
     font-weight: 800;
     line-height: 38px; /* 126.667% */
     margin-bottom: 32px;
+}
+
+    /* 버튼 그룹 스타일 */
+    .btn-group {
+        display: inline-flex;
+        border: 1px solid #D0D5DD;
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        border-radius: 8px;
+        background: #FFF;
+        overflow: hidden;
+    }
+
+    /* 버튼 기본 스타일 */
+    .btn-group .btn {
+        border: 1px solid #D0D5DD;
+        background: #FFF;
+        padding: 10px 16px;
+        color: #344054;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 20px;
+        margin: 0;
+    }
+
+    /* 첫 번째 버튼의 margin-left 제거 */
+    .btn-group .btn:first-child {
+        margin-left: 0;
+    }
+
+    /* Stage 버튼 특정 스타일 */
+    .stage-btn {
+        width: 90px !important;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 8px;
+        min-width: 90px;
+    }
+
+   /* 검색창 스타일 */
+.form-control {
+    width: 100%;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: left; /* 텍스트를 좌측 정렬 */
+}
+
+/* 검색창에 포커스 시 스타일 */
+.form-control:focus {
+    border-color: #7F56D9;
+    box-shadow: 0 0 0 4px rgba(127, 86, 217, 0.1);
+    text-align: left; /* 텍스트를 좌측 정렬 */
+}
+
+/* 파일 컨트롤 스타일 */
+.file-control {
+    display: flex;
+    height: 36px;
+    justify-content: flex-start; /* 컨텐츠를 왼쪽으로 정렬 */
+    align-items: center; /* 세로 방향으로 가운데 정렬 */
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: left; /* 텍스트를 좌측 정렬 */
+}
+
+    .btn-group .btn:hover {
+        background: #F9FAFB;
+        border: 1px solid #D0D5DD !important;
+        z-index: 1;
+    }
+    .btn-custom-purple:hover {
+    background-color: #6941C6;
+    color: white;
+    }
+    /* 선택된 버튼 스타일 */
+    .btn-check:checked + .btn {
+        background: #F4EBFF !important;
+        border: 1px solid #7F56D9 !important;
+        z-index: 2;
+    }
+
+    /* 선택된 버튼의 hover 효과 */
+    .btn-check:checked + .btn:hover {
+        background: #F4EBFF !important;
+        border: 1px solid #7F56D9 !important;
+    }
+   
+/* 모달 내용 왼쪽 정렬 */
+.modal-body {
+        text-align: left; /* 전체 모달 내용 왼쪽 정렬 */
+    }
+/* 암종 검색창 넓이 조정 */
+ .search-input {
+        width: 100%; /* 100%로 설정 */
+        max-width: 500px; /* 최대 너비 설정 */
+    }
+
+    /* 기타 의견 입력창 넓이 조정 */
+    .comment-input {
+        width: 100%; /* 100%로 설정 */
+        max-width: 500px; /* 최대 너비 설정 */
+    }
+/*파일첨부버튼*/
+.modal-fileupload {
+    display: flex;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--Gray-300, #D0D5DD);
+    background: var(--White, #FFF);
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: var(--Gray-700, #344054);
+
+/* Text sm/Bold */
+font-size: 14px;
+font-style: normal;
+font-weight: 800;
+line-height: 20px; /* 142.857% */
+}
+
+.delete-file-btn {
+    display: flex;
+    height: 36px;
+    align-items: flex-start;
+    padding: 8px 8px;
+    justify-content: left;
+    align-items: left;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--White, #FFF);
+    color: var(--Gray-700, #344054);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 20px; /* 142.857% */
 }
