@@ -34,21 +34,6 @@
     color: #ffffff; /* 버튼 텍스트 색상 */
 }
 
-.custom-btn {
-    border: 1px solid #D0D5DD; /* 테두리 색상 */
-    background-color: #ffffff; /* 배경색 */
-    color: #344054; /* 텍스트 색상 */
-    border-radius: 8px; /* 둥글게 */
-}
-
-/* 버튼 스타일 */
-.buttons {
-    display: flex; /* 버튼을 플렉스 박스로 배치 */
-    flex-direction: column; /* 세로로 배치 */
-    align-items: flex-start; /* 왼쪽 정렬 */
-    margin-top: 32px; /* 버튼 위 여백 추가 (필요 시 조정) */
-}
-
 .primary-btn {
     background-color: #7F56D9; /* 버튼 배경색 */
     color: white; /* 버튼 글자색 */
@@ -56,7 +41,6 @@
     border-radius: 8px; /* 둥글게 */
     padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
     margin-bottom: 12px; /* 아래 버튼과의 간격 */
-    cursor: pointer; /* 마우스 커서 포인터로 변경 */
     transition: background-color 0.3s ease; /* 호버 시 배경색 전환 효과 */
     width: auto; /* 자동 크기 조정 */
 }
@@ -67,7 +51,6 @@
     border: 1px solid #D0D5DD; /* 테두리 색상 */
     border-radius: 8px; /* 둥글게 */
     padding: 1rem 1rem; /* 상하 패딩 1.2rem, 좌우 패딩 1rem */
-    cursor: pointer; /* 마우스 커서 포인터로 변경 */
     width: auto; /* 자동 크기 조정 */
 }
 
@@ -128,6 +111,33 @@
     gap: 8px;
 }
 
+.file-reset-btn {
+    border-radius: 8px;
+    border: 1px solid #F9F5FF; /* 기본 색상으로 변경 */
+    background: #F9F5FF; /* 배경색을 원하는 색상으로 변경 */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    font-weight: 800;
+    color: #6941C6; /* 텍스트 색상 */
+    padding: 8px 14px;
+    margin-top: 5px;
+}
+
+   /* 파일명 표시 스타일 */
+.file-name {
+    margin-top: 5px;
+    color: #101828; /* 텍스트 색상 */
+    display: flex;
+    padding: 8px 14px;
+justify-content: center;
+align-items: center;
+border-radius: 8px;
+border: 1px solid var(--Gray-300, #D0D5DD);
+background: var(--White, #FFF);
+
+/* Shadow/xs */
+box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
 
 .primary-btn-new {
     padding: 8px; /* 버튼의 상하좌우 여백 */
@@ -186,9 +196,69 @@
 }
 
 
+.type-select-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.type-select-btn:hover {
+    border-color: #7F56D9;
+    background-color: #F9F5FF;
+    
+}
+
+.type-select-btn h5 {
+    color: #344054;
+    font-weight: 600;
+}
+
+.type-select-btn p {
+    font-size: 14px;
+}
+
+/* 주소 검색 버튼 스타일 */
+.btn-outline-secondary {
+    background-color: white;
+    border: 1px solid #D0D5DD;
+    color: #344054;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #F9FAFB;
+    border: 1px solid #D0D5DD;
+    color: #344054;
+}
+
+/* 주소 검색 모달 크기 조정 */
+.address-search-modal {
+    max-width: 800px;  /* 원하는 넓이로 조정 가능 */
+    width: 100%;
+}
+
+/* 검색 입력 영역 넓이 조정 */
+.search-input-wrapper {
+    width: 100%;
+}
+
+.search-input-wrapper .input-group {
+    width: 100%;
+}
+
+.search-input-wrapper .form-control {
+    flex: 1;  /* 입력창이 최대한의 공간을 차지하도록 설정 */
+}
+
+/* 검색 버튼 최소 넓이 설정 */
+.search-input-wrapper .btn {
+    min-width: auto;  /* 버튼이 내용만큼만 차지하도록 설정 */
+    white-space: nowrap;
+}
+
 /* 전체 폰트 설정 */
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard', sans-serif;
     background-color: #FFFFFF;
 }
 
@@ -657,6 +727,7 @@ align-self: stretch;
     border-color: #007BFF;
 }
 
+
 /* 설명 텍스트 스타일 */
 .description {
     color: #344054;
@@ -688,26 +759,6 @@ align-self: stretch;
     border-radius: 12px;
 }
 
-.type-select-btn {
-    background-color: #FFFFFF;
-    border: 1px solid #D0D5DD;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.type-select-btn:hover {
-    border-color: #7F56D9;
-    background-color: #F9F5FF;
-}
-
-.type-select-btn h5 {
-    color: #344054;
-    font-weight: 600;
-}
-
-.type-select-btn p {
-    font-size: 14px;
-}
 
 /* Input focus styles */
 input:focus,
@@ -961,4 +1012,13 @@ textarea:focus {
 .inclusion_criteria {
     margin-bottom: 8px; /* Spacing between these fields */
     font-size: 14px; /* Font size for these fields */
+}
+
+.welcome-title {
+    color: var(--Gray-900, #101828);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 38px; /* 126.667% */
+    margin-bottom: 32px;
 }
