@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암종코드 검색 - CANCERT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+
+  
+<body>
+    <!-- 모달 열기 버튼 -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dcodemodal">
+        모달 열기
+    </button>
+<!-- DCODE 모달 -->
+<div class="modal fade" id="dcodemodal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 1024px;">
+        <div class="modal-content" style="border-radius: 12px; padding: 24px; box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);">
+           
+            <div class="modal-body">
+                <div class="modal-body d-flex flex-column align-items-start gap-4" style="overflow-y: auto;">
+            
+                    <h3 style="color: #101828; font-size: 18px; font-weight: 800;">암종 종류</h3>
+                    <p style="color: #344054; font-size: 14px; font-weight: 400;">의뢰할 암종 종류를 선택해주세요.</p>
+    
+                    <!-- 암종 검색창 -->
+                    <div class="mb-3 w-100">
+                        <label class="form-label" style="color: #344054; font-size: 14px;">검색</label>
+                        <div class="input-group w-100">
+                            <input type="text" class="form-control" placeholder="암종 코드 또는 이름으로 검색 (예: C16.1 또는 위암)" style="font-size: 16px; color: #101828;">
+                            <button class="btn btn-white" type="button" style="background: white; border: 1px solid #D0D5DD; border-left: 0; color: #344054;">
+                                <img src="img/search.png" alt="검색" width="20" height="20">
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="browsing-section" style="height: 720px; display: flex; flex-direction: column;">
+                        <div class="browsing-list" style="flex: 1; overflow-y: auto;">
+                            <!-- Example of a browsing item -->
+                            <div class="browsing-item" data-level="1" style="display: flex; align-items: center; padding: 12px; margin-left: 0; width: 100%;">
+                                <img src="img/chevron-right.png" alt="Expand" class="chevron-icon" style="cursor: pointer;">
+                                <span>C12 - 이상동(梨狀洞)의 악성 신생물</span>
+                                <img src="img/check_dcode.png" alt="Check" class="check-icon" style="display: none; margin-left: auto; padding-right: 16px;">
+                            </div>
+                            <div class="sub-list" style="display: none; padding-left: 44px; width: calc(100% - 44px);">
+                                <div class="browsing-item" data-level="2" style="display: flex; align-items: center; padding: 12px; margin-left: 44px; width: 100%;">
+                                    <img src="img/chevron-right.png" alt="Expand" class="chevron-icon" style="cursor: pointer;">
+                                    <span>C13.0 - 후륜상연골부의 악성 신생물</span>
+                                    <img src="img/check_dcode.png" alt="Check" class="check-icon" style="display: none; margin-left: auto; padding-right: 16px;">
+                                </div>
+                                <div class="sub-list" style="display: none; padding-left: 44px; width: calc(100% - 44px);">
+                                    <div class="browsing-item" data-level="3" style="display: flex; align-items: center; padding: 12px; margin-left: 88px; width: 100%;">
+                                        <span>C13.00 - 후륜상연골부의 악성 신생물, 조기</span>
+                                        <img src="img/check_dcode.png" alt="Check" class="check-icon" style="display: none; margin-left: auto; padding-right: 16px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="fixed-button-area">
+                        <div class="d-flex gap-3 w-100">
+                            <button type="button" class="btn btn-custom-white flex-grow-1" style="background: white; border: 1px solid #D0D5DD; color: #344054; height: 44px; width: 100%;" data-bs-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-custom-purple flex-grow-1" style="height: 44px; width: 100%;">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.browsing-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Deselect all items first
+                document.querySelectorAll('.browsing-item').forEach(i => {
+                    i.classList.remove('selected');
+                    const checkIcon = i.querySelector('.check-icon');
+                    checkIcon.style.display = 'none'; // Hide all check icons
+                });
+
+                // Select the clicked item
+                this.classList.add('selected');
+
+                // Show the check icon for the selected item
+                const checkIcon = this.querySelector('.check-icon');
+                checkIcon.style.display = 'inline';
+
+                // Toggle the sub-list visibility
+                const subList = this.nextElementSibling; // Get the next sibling (sub-list)
+                if (subList) {
+                    subList.style.display = this.classList.contains('selected') ? 'block' : 'none';
+                }
+
+                // Change the chevron icon based on selection
+                const icon = this.querySelector('.chevron-icon');
+                if (this.classList.contains('selected')) {
+                    icon.src = 'img/chevron-down.png'; // Change to down icon
+                } else {
+                    icon.src = 'img/chevron-right.png'; // Change back to right icon
+                }
+            });
+        });
+    </script>
+</body>
+</html>
