@@ -43,6 +43,10 @@
     margin-bottom: 12px; /* 아래 버튼과의 간격 */
     transition: background-color 0.3s ease; /* 호버 시 배경색 전환 효과 */
     width: auto; /* 자동 크기 조정 */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 24px; /* 150% */
 }
 
 .secondary-btn {
@@ -634,7 +638,7 @@ align-self: stretch;
     color: #344054; /* 본문 색상 */
     font-size: 16px;
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
 
 }
@@ -1288,4 +1292,14 @@ textarea:focus {
     padding: 24px; /* Set the padding for the modal content */
     position: relative; /* Ensure the position is relative for absolute positioning of footer */
     overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+}
+
+.input-group .form-control {
+    height: 44px; /* Set a fixed height for the input field */
+    border-radius: 0.25rem; /* Match the button's border radius */
+}
+
+.input-group .btn {
+    height: 44px; /* Set the same height for the button */
+    border-radius: 0.25rem; /* Match the input field's border radius */
 }
