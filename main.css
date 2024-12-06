@@ -289,7 +289,7 @@ box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
     flex: 1;  /* Input takes maximum space */
     margin-right: 0; /* Remove any right margin */
     border: none; /* 테두리 없음 */
-    outline: none; /* 포커스 시 아웃라��� 없음 */
+    outline: none; /* 포커스 시 아웃라인 없음 */
     font-size: 16px; /* 폰트 크기 */
 }
 
@@ -626,7 +626,7 @@ align-self: stretch;
 }
 
 .call-to-action {
-    margin-bottom: 40px; /* 간격 ��정 */
+    margin-bottom: 40px; /* 간격 설정 */
 }
 
 .title {
