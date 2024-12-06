@@ -1288,11 +1288,6 @@ textarea:focus {
     margin: auto; /* Center the modal horizontally */
 }
 
-.modal-content {
-    padding: 24px; /* Set the padding for the modal content */
-    position: relative; /* Ensure the position is relative for absolute positioning of footer */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
-}
 
 .input-group .form-control {
     height: 44px; /* Set a fixed height for the input field */
@@ -1302,4 +1297,49 @@ textarea:focus {
 .input-group .btn {
     height: 44px; /* Set the same height for the button */
     border-radius: 0.25rem; /* Match the input field's border radius */
+}
+.modal-content {
+    padding: 24px; /* Set the padding for the modal content */
+    position: fixed; /* 위치를 고정으로 변경 */
+    top: 50%; /* 화면의 50% 위치 */
+    left: 50%; /* 화면의 50% 위치 */
+    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    border-radius: 12px;
+    background: #FFF; /* 배경색 */
+    box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03); /* 그림자 */
+    display: flex;
+    width: 400px;
+    padding: 24px; /* var(--spacing-3xl, 24px) */
+    flex-direction: column;
+    align-items: left;
+    gap: 32px;
+}
+.modal-body img {
+    width: 50px; /* 이미지 크기 조정 */
+    height: auto;
+    margin-right: 16px; /* 이미지와 텍스트 간격 */
+}
+.modal-body h5 {
+    color: #344054; /* 타이틀 색상 */
+    margin: 24px 0 0 0; /* 위쪽 마진 24px 추가 */
+}
+.modal-body p {
+    color: #344054; /* 본문 색상 */
+    font-size: 14px; /* 본문 폰트 크기 */
+    margin: 0; /* 기본 여백 제거 */
+}
+.status-table {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
 }
