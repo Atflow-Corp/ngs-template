@@ -1361,3 +1361,264 @@ textarea:focus {
     height: 44px; /* Set the same height for the button */
     border-radius: 0.25rem; /* Match the input field's border radius */
 }
+
+/*환자상세페이지 */
+
+
+/* Breadcrumb style */
+.breadcrumb {
+    color: #667085;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 24px;
+}
+  /* Breadcrumb 박스 스타일 */
+  .breadcrumb-box {
+            display: flex;
+            padding: 32px;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            border-bottom: 1px solid var(--Gray-200, #EAECF0);
+            background: var(--White, #FFF);
+            justify-content: left; /* 가운데 정렬 */
+        }
+
+
+/* Page layout */
+ /* 전체 레이아웃 스타일 */
+ .main-layout {
+            display: flex;
+            width: 1280px; /* 전체 너비 */
+            margin: 0 auto; /* 가운데 정렬 */
+            align-items: flex-start; /* 내부 내용은 좌측 정렬 */
+        }
+
+.left-box {
+    display: flex;
+    width: 312px; /* 고정 너비 */
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start; /* 좌측 정렬 */
+    gap: 32px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-right: 1px solid var(--Gray-200, #EAECF0);
+    background: var(--White, #FFF);
+}
+
+.left-box h1 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 38px;
+}
+
+.left-box img {
+    width: 32px;
+    height: auto;
+    margin-right: 16px;
+    margin-left: 16px;
+    align-items: right;
+}
+
+.left-box p {
+    color: #344054;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.left-box .label {
+    color: #344054;
+    font-size: 14px;
+}
+
+.right-box {
+    display: flex;
+    flex: 1; /* 비율로 전체 공간을 채우도록 설정 */
+    flex-direction: column;
+    align-items: flex-start; /* 좌측 정렬 */
+    gap: 16px;
+    border-radius: 8px;
+    background: var(--White, #FFF);
+    padding: 32px; /* 패딩 추가 */
+    border-bottom: 1px solid var(--Gray-200, #EAECF0);
+}
+
+.right-box .label {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.right-box .card {
+    display: flex;
+    width: 100%; /* 부모 요소의 너비에 맞게 조정 */
+    max-width: 600px; /* 최대 너비 520px */
+    align-items: flex-start; /* align-items를 flex-start로 수정 */
+    gap: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--Brand-500, #9E77ED);
+    background: var(--White, #FFF);
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.right-box .card img {
+    width: 16px;
+    height: auto;
+}
+
+.right-box .card p {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.right-box .card .button {
+    border-radius: 8px;
+    border: 1px solid var(--Brand-600, #7F56D9);
+    background: var(--Brand-600, #7F56D9);
+}
+
+ /* 이름 스타일 */
+ .patient-name {
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 38px; /* 126.667% */
+            width: 196px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            white-space: nowrap; /* 줄바꿈 방지 */
+        }
+
+        /* 환자 번호 스타일 */
+        .patient-id {
+            color: #344054;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* 나이 스타일 */
+        .label {
+            font-size: 14px;
+        }
+
+        .value {
+            font-size: 16px;
+        }
+
+        .delete-icon {
+            width: 32px;  /* 아이콘 너비 */
+            height: 32px; /* 아이콘 높이 */
+            display: inline-block; /* 인라인 블록으로 설정 */
+        }
+
+        /* 버튼 스타일을 초기화 */
+        .btn {
+            background: none; /* 배경 제거 */
+            border: none; /* 테두리 제거 */
+            padding: 0; /* 패딩 제거 */
+            cursor: pointer; /* 커서 포인터로 변경 */
+            line-height: 0; /* 버튼의 높이를 0으로 설정하여 아이콘 크기 조정 */
+        }
+
+        .btn-view {
+            border-radius: 8px;
+            border: 1px solid var(--Brand-600, #7F56D9);
+            background: var(--Brand-600, #7F56D9);
+            color: #FFFFFF; /* 버튼 텍스트 색상 */
+            padding: 8px 16px; /* 버튼 패딩 */
+            cursor: pointer; /* 커서 포인터로 변경 */
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); /* 그림자 효과 */
+            transition: background 0.3s; /* 배경색 변화에 대한 트랜지션 */
+            font-weight: 800;
+            margin-top: 16px;
+        }
+
+        .btn-view:hover {
+            background: var(--Brand-500, #9E77ED); /* 호버 시 배경색 변화 */
+        }
+        .btn-more {
+            border-radius: 8px;
+            border: 1px solid var(--Gray-300, #D0D5DD);
+            background: var(--White, #FFF);
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+            color: var(--Gray-700, #344054);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 24px; /* 150% */
+        }
+
+        .common-card {
+            border-radius: 16px;
+            border: 1px solid var(--Gray-200, #EAECF0);
+            background: var(--White, #FFF);
+            padding: 16px;
+            width: calc(100% - 40px); /* Adjust width to match right-box-card */
+            margin-left: 20px; /* Align with right-box-card */
+            min-width: 300px; /* Set minimum width for the card */
+        }
+
+        .chip-container {
+            display: flex;
+            gap: 8px; /* Space between chips */
+            margin: 8px 0; /* Margin for the chip container */
+        }
+
+        .chip {
+            border-radius: 50px; /* Make the chip circular */
+            padding: 6px 12px; /* Padding for the chip */
+            font-size: 14px; /* Font size for the chip */
+            display: inline-block; /* Display inline */
+        }
+
+        .step {
+            color: #93370D; /* Text color */
+            font-weight: 800; /* Font weight */
+            font-size: 18px; /* Font size */
+            padding: 10px; /* Padding for better spacing */
+            border-radius: 50px; /* Rounded background */
+            display: inline-block; /* Make it inline-block to fit the content */
+            position: relative; /* Positioning for the background */
+        }
+        .phase-1 {
+        background-color: #FFFAEB; /* Background color for 1상 */
+    }
+
+    .phase-2 {
+        background-color: #FEF0C7; /* Background color for 2상 */
+    }
+
+    .phase-3 {
+        background-color: #FEDF89; /* Background color for 3상 */
+    }
+
+    .phase-4 {
+        background-color: #FEC84B; /* Background color for 4상 */
+    }
+
+    .name {
+        color: #101828; /* Text color */
+        font-weight: 800; /* Font weight */
+        font-size: 18px; /* Font size */
+        margin-bottom: 24px; /* Spacing below the name field */
+    }
+
+    .chip-container {
+        margin-bottom: 24px; /* Spacing below the chip container */
+    }
+
+    .created_by,
+    .approve-date,
+    .trial-organ,
+    .eligibility_age,
+    .eligibiltiy_gender,
+    .inclusion_criteria {
+        margin-bottom: 8px; /* Spacing between these fields */
+        font-size: 14px; /* Font size for these fields */
+    }
+    

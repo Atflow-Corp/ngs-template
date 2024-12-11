@@ -42,9 +42,7 @@
       </div>
     </div>
   </nav>
-
-  
-   
+	
 
 
 </head>
@@ -55,7 +53,6 @@
     <div class="breadcrumb-box" style="width: calc(1280px); margin: 0 auto;">
         <ol class="breadcrumb" style="margin: 0;">
             <li class="breadcrumb-item">NGS 유전자 검사</li>
-            <li class="breadcrumb-item active" aria-current="page">환자 상세보기</li>
         </ol>
     </div>
 
@@ -65,11 +62,9 @@
         <div class="left-box">
             <div class="patient-name">
                 환자 이름
-                <button type="button" class="btn p-0" onclick="deletePatientInfo()">
-                    <img src="img/delete.png" alt="삭제" class="delete-icon">
-                </button>
+               
             </div>
-            <div class="patient-id">193884910</div>
+           
             <div style="margin-top: 32px;">
                 <label class="label">나이</label>
                 <div class="value">29세 (YYYY.MM.DD)</div>
@@ -86,14 +81,7 @@
                 <label class="label">주소</label>
                 <div class="value">서울시 송파구 잠실동</div>
             </div>
-            <div style="margin-top: 20px;">
-                <label class="label">담당의</label>
-                <div class="value">김우빈</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label class="label">정보 조회 권한</label>
-                <div class="value">김우빈, 이성은, 박민지</div>
-            </div>
+            
         </div> <!-- 좌측 박스 닫기 -->
 
         <!-- 우측 박스 (진행상황 및 업데이트 내용) -->
@@ -120,9 +108,10 @@
                 </div>
             </div>
 
+
             <!-- 두 번째 카드 영역 -->
             <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; margin-top: 24px;">
-                <h6 style="margin: 0; text-align: left;"><b>NGS 유전자 검사 의뢰서</b></h6>
+                <h6 style="margin: 0; text-align: left;"><b>NGS 검사 결과</b></h6>
                 <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-2')">
                     <img id="toggle-icon-2" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
                 </button> <!-- 접기/펼치기 버튼 -->
@@ -136,27 +125,11 @@
                         <p style="margin: 0;">승인 완료 (2024.1.19.)</p>
                     </div>
                     <div style="margin-left: auto;">
-                        <button class="btn-view">의뢰서 수정</button> <!-- PDF 보기 버튼 추가 -->
+                        <button class="btn-view">PDF 보기</button> <!-- PDF 보기 버튼 추가 -->
                     </div>
                 </div>
             </div>
-      <!-- 세 번째 카드 영역: NGS 진행현황 조회 -->
-    <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; margin-top: 24px;">
-        <h6 style="margin: 0; text-align: left;"><b>NGS 검사의뢰 진행현황 조회</b></h6>
-        <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-3')">
-            <img id="toggle-icon-3" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
-        </button> <!-- 접기/펼치기 버튼 -->
-    </div>
-    
-    <div id="right-box-card-3" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
-        <div style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; flex-direction: column; align-items: flex-start; min-width: 500px;">
-            <div style="position: relative; width: 100%;">
-                <input type="text" placeholder="검색어를 입력하세요" style="width: 100%; padding: 8px 40px 8px 8px; margin-bottom: 8px; border: 1px solid var(--Gray-300, #D0D5DD); border-radius: 4px;">
-                <img src="img/search.png" alt="검색" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 20px; height: auto;">
-            </div>
-            <p style="margin: 0; font-size: 14px;">가이드: 여기에 가이드가 추가됩니다. 무엇을 검색하라고 할 지 알려줍니다. (패키지번호 등)</p>
-        </div>
-    </div>
+     
             <!-- NGS 기반 추천 임상 레이블 및 접기/펼치기 버튼 -->
             <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
                 <h6 style="margin: 0; text-align: left;"><b>NGS 기반 추천 임상</b></h6>
