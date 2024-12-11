@@ -47,20 +47,17 @@
                     <label for="name" class="form-label">이름</label>
                     <input type="text" class="form-control" id="name" required>
                 </div>
-
                 <div class="mb-3">
-                    <label class="form-label">성별</label>
-                    <div class="d-flex gap-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
-                            <label class="form-check-label" for="male">남성</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                            <label class="form-check-label" for="female">여성</label>
-                        </div>
+                    <label class="form-label" style="color: #344054; font-size: 14px;">성별</label><br>
+                    <div class="btn-group" role="group" aria-label="Gender selection">
+                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off">
+                        <label class="btn gender-btn" for="male" style="font-size: 14px; color: #101828;">남성</label>
+                        
+                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off">
+                        <label class="btn gender-btn" for="female" style="font-size: 14px; color: #101828;">여성</label>
                     </div>
                 </div>
+                
 
                 <div class="mb-3">
                     <label for="birthdate" class="form-label">생년월일</label>
