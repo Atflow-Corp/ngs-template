@@ -157,6 +157,17 @@
             <p style="margin: 0; font-size: 14px;">가이드: 여기에 가이드가 추가됩니다. 무엇을 검색하라고 할 지 알려줍니다. (패키지번호 등)</p>
         </div>
     </div>
+
+  <!--NGS 추천 임상 없음 영역-->
+  <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
+    <h6 style="margin: 0; text-align: left;"><b>NGS 기반 추천 임상</b></h6>
+  </div>
+
+  <div class="no-results" style="text-align: center; margin-top: 16px;">
+    <h3 class="no-results-title">추천 임상이 없습니다.</h3>
+    <p class="no-results-description">현재 조건에 부합하는 추천 임상이 없습니다. 나중에 다시 확인해주세요.</p>
+  </div>
+
             <!-- NGS 기반 추천 임상 레이블 및 접기/펼치기 버튼 -->
             <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
                 <h6 style="margin: 0; text-align: left;"><b>NGS 기반 추천 임상</b></h6>
@@ -164,9 +175,12 @@
                     <img id="toggle-icon-list" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
                 </button> <!-- 접기/펼치기 버튼 -->
             </div>
-
+      
             <!-- 카드 목록 -->
             <div id="card-list" class="card-list" style="display: flex; flex-direction: column; padding: var(--spacing-3xl, 24px) var(--spacing-3xl, 24px) 28px var(--spacing-3xl, 24px); align-items: flex-start; gap: var(--spacing-3xl, 24px); align-self: stretch;">
+         
+                
+                <!-- 기존 카드 내용 -->
                 <div class="common-card">
                     <p class="step trial-phase phase-1">1상</p> <!-- step필드 -->
                     <p class="name">재발성/불응성 혈액암이 있는 시험대상자를 대상으로 한 PRT2527 단독요법 및 자누브루티닙과의 병용요법에 대한 제1상 공개, 다기관, 안전성 및 유효성 임상시험</p> <!-- name필드 -->
@@ -195,6 +209,7 @@
             </div>
         </div>
     </div>
+   
 
     <!-- 플로팅 버튼 -->
     <div style="position: fixed; bottom: 20px; right: 20px;">
@@ -230,13 +245,19 @@
         function toggleCardList() {
             const cardList = document.getElementById('card-list');
             const iconList = document.getElementById('toggle-icon-list');
+            const commonCards = cardList.querySelectorAll('.common-card');
+            const noResults = cardList.querySelector('.no-results');
             
             if (cardList.style.display === 'none') {
-                cardList.style.display = 'flex'; // Show the card list
-                iconList.src = 'img/chevron-down.png'; // Change icon to down
+                cardList.style.display = 'flex';
+                // 결과가 없을 때 no-results 표시
+                if (commonCards.length === 0) {
+                    noResults.style.display = 'flex';
+                }
+                iconList.src = 'img/chevron-down.png';
             } else {
-                cardList.style.display = 'none'; // Hide the card list
-                iconList.src = 'img/chevron-up.png'; // Change icon to up
+                cardList.style.display = 'none';
+                iconList.src = 'img/chevron-up.png';
             }
         }
 
