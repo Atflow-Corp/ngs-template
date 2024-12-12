@@ -1341,6 +1341,9 @@ textarea:focus {
 }
 
 .modal-dialog {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     max-width: 1024px; /* Set the maximum width of the modal */
     width: 100%; /* Ensure it takes full width up to the max */
     margin: auto; /* Center the modal horizontally */
