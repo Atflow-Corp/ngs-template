@@ -147,16 +147,24 @@
             <img id="toggle-icon-3" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
         </button> <!-- 접기/펼치기 버튼 -->
     </div>
-    
+   
     <div id="right-box-card-3" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
         <div style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; flex-direction: column; align-items: flex-start; min-width: 500px;">
-            <div style="position: relative; width: 100%;">
-                <input type="text" placeholder="검색어를 입력하세요" style="width: 100%; padding: 8px 40px 8px 8px; margin-bottom: 8px; border: 1px solid var(--Gray-300, #D0D5DD); border-radius: 4px;">
-                <img src="img/search.png" alt="검색" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 20px; height: auto;">
+        
+                <div class="input-group">
+                    <input type="text" placeholder="검색어를 입력하세요" class="form-control" style="font-size: 16px; color: #101828;" id="addressInput" oninput="showSearchResults()">
+                    <button class="btn btn-white d-flex justify-content-center align-items-center" type="button" style="background: white; border: 1px solid #D0D5DD; color: #344054;">
+                        <div class="text-center">
+                            <img src="img/search.png" alt="검색" style="width: 20px; height: 20px; object-fit: cover; display: block; margin: 0 auto;">
+                        </div>
+                    </button>
+                </div>
+                <p style="margin: 0; font-size: 14px;">가이드: 여기에 가이드가 추가됩니다. 무엇을 검색하라고 할 지 알려줍니다. (패키지번호 등)</p>
+                
             </div>
-            <p style="margin: 0; font-size: 14px;">가이드: 여기에 가이드가 추가됩니다. 무엇을 검색하라고 할 지 알려줍니다. (패키지번호 등)</p>
+           
         </div>
-    </div>
+    
 
   <!--NGS 추천 임상 없음 영역-->
   <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
