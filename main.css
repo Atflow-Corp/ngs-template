@@ -1518,7 +1518,14 @@ textarea:focus {
     height: 32px; /* 아이콘 높이 */
     display: inline-block; /* 인라인 블록으로 설정 */
 }
-
+.deletepatient-btn{
+    background: var(--White, #FFF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
 
 .common-card {
     border-radius: 16px;
@@ -1966,6 +1973,7 @@ textarea:focus {
             align-items: center;
             justify-content: space-between;
             white-space: nowrap; /* 줄바꿈 방지 */
+
         }
 
         /* 환자 번호 스타일 */
