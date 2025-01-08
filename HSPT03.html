@@ -64,38 +64,69 @@
     <div class="main-layout">
         <!-- 좌측 박스 -->
         <div class="left-box">
-            <div class="patient-name">
-                환자 이름
-                <button class="deletepatient-btn" onclick="deletePatientInfo()">
-                    <img src="img/delete.png" alt="삭제" class="delete-icon">
-                </button>
+      
+            
+                <!-- 이름과 삭제 버튼 -->
+                <div class="patient-name">
+                    <h2 class="patient-name">김*순</h2>
+                    <button class="deletepatient-btn" onclick="openModal('김*순')">
+                        <img src="img/trash.png" class="delete-icon" alt="삭제">
+                    </button>
+                </div>
+                
+            
+                <!-- 첫 번째 그룹 -->
+                <div class="group">
+                    <div>
+                        <label class="label">환자 번호</label>
+                        <div class="value">198371</div>
+                    </div>
+                    <div>
+                        <label class="label">나이</label>
+                        <div class="value">29세 (YYYY.MM.DD)</div>
+                    </div>
+                    <div>
+                        <label class="label">성별</label>
+                        <div class="value">남</div>
+                    </div>
+                    <div>
+                        <label class="label">휴대폰 번호</label>
+                        <div class="value">010-0000-1111</div>
+                    </div>
+                    <div>
+                        <label class="label">주소</label>
+                        <div class="value">서울시 송파구 잠실동</div>
+                    </div>
+                    <div>
+                        <label class="label">담당의</label>
+                        <div class="value">김우빈</div>
+                    </div>
+                </div>
+      
+                <!-- 두 번째 그룹 -->
+                <div class="group">
+                    <div>
+                        <label class="label">NGS 검사 결과(TNM)</label>
+                        <div class="value">T2, N3, M1</div>
+                    </div>
+                    <div>
+                        <label class="label">검체 종류</label>
+                        <div class="value">FFPE</div>
+                    </div>
+                    <div>
+                        <label class="label">패널 의뢰 내용</label>
+                        <div class="value">고형암</div>
+                    </div>
+                    <div>
+                        <label class="label">유전자 분석 결과 (유전자 - 변이)</label>
+                        <div class="value">TP53 - R175H<br>KRAS - G12D<br>PIK3CA - H1047R</div>
+                    </div>
+                   <!--업데이트 날짜 표시--> <div class="label">25.01.08 업데이트</div>
+                </div>
+            
+
             </div>
-            <div class="patient-id">193884910</div>
-            <div style="margin-top: 32px;">
-                <label class="label">나이</label>
-                <div class="value">29세 (YYYY.MM.DD)</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label class="label">성별</label>
-                <div class="value">남</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label class="label">휴대폰 번호</label>
-                <div class="value">010-0000-1111</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label class="label">주소</label>
-                <div class="value">서울시 송파구 잠실동</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label class="label">담당의</label>
-                <div class="value">김우빈</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label class="label">정보 조회 권한</label>
-                <div class="value">김우빈, 이성은, 박민지</div>
-            </div>
-        </div> <!-- 좌측 박스 닫기 -->
+        <!-- 좌측 박스 닫기 -->
 
         <!-- 우측 박스 (진행상황 및 업데이트 내용) -->
         <div class="right-box" style="flex: 1; padding: 32px; margin-left: auto;">
