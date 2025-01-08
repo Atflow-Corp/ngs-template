@@ -390,10 +390,15 @@ body {
 
 
 /* 메인 타이틀 및 텍스트 스타일 */
-h1, h2, h3 {
+h1, h3 {
     color: #333333;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+h2 {
+    color: #333333;
+    font-weight: bold;
 }
 
 p {
@@ -1016,7 +1021,7 @@ textarea:focus {
     font-size: 30px;
     font-weight: 800;
     line-height: 38px; /* 126.667% */
-    width: 196px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1910,10 +1915,35 @@ textarea:focus {
     font-weight: 400;
 }
 
+/* 라벨과 값 간격 조정 */
 .left-box .label {
-    color: #344054;
     font-size: 14px;
+    color: #344054;
+    margin-bottom: 4px; /* 라벨과 값 간 간격 */
 }
+
+/* 그룹 간격 조정 */
+.left-box .group {
+    margin-bottom: 32px; /* 각 그룹 사이 간격 */
+}
+
+
+
+.left-box .value {
+    font-size: 16px;
+    color: #101828;
+    margin-bottom: 16px; /* 각 항목 간 간격 */
+}
+
+/* 검체 종류와 패널 의뢰 내용 간 간격 조정 */
+.left-box .group:last-child .label {
+    margin-bottom: 2px; /* 더 좁은 간격 */
+}
+
+.left-box .group:last-child .value {
+    margin-bottom: 12px; /* 값 간 간격 축소 */
+}
+
 
 .right-box {
     display: flex;
