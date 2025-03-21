@@ -322,11 +322,28 @@ box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 /* 전체 폰트 설정 */
 body {
     font-family: 'Pretendard', sans-serif;
-    background-color: #FFFFFF;
+    background-color: #F9FAFB;
+    margin: 0;
+    
 }
 
 /* Header 스타일 */
-
+.container-mybox{
+    background-color: #FFFFFF;
+    display: flex;
+    width: 1280px;
+    padding: 32px;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1 0 0;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
 
 .navbar {
     background-color: #6941C6 !important;  /* 상단 네비게이션 배경색 강제 적용 */
@@ -593,12 +610,6 @@ a:hover {
     color: #101828;
     margin-bottom: 16px; /* 간격 설정 */
 }
- /* 기본 설정 */
-body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #FFFFFF;
-}
 
 
 /* 메인 컨테이너 */
@@ -825,7 +836,7 @@ align-self: stretch;
 
 
 /* Input focus styles */
-input:focus,
+input:not([type="radio"]):focus,
 select:focus,
 textarea:focus {
     border: 1px solid #D6BBFB !important;
@@ -833,6 +844,11 @@ textarea:focus {
     background: #FFFFFF !important;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF !important;
     outline: none !important;
+}
+
+/* 라디오 버튼 스타일 */
+input[type="radio"] {
+    accent-color: #7F56D9;
 }
 
 /* For input groups (like address search) */
@@ -966,6 +982,7 @@ textarea:focus {
 .left-box .label {
     color: #344054;
     font-size: 14px;
+    font-weight: 800;
 }
 
 .right-box {
@@ -1038,6 +1055,7 @@ textarea:focus {
 /* 나이 스타일 */
 .label {
     font-size: 14px;
+    font-weight: 800;
 }
 
 .value {
@@ -2153,3 +2171,69 @@ textarea:focus {
     line-height: 20px;
 }
     
+.infobox{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 48px;
+    gap: 24px;
+    border-top: 1px solid var(--Gray-200, #EAECF0);
+    align-items: center;
+}
+
+.infobox-title{
+    color: var(--Gray-700, #344054);
+    width: 280px;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px; /* 142.857% */
+    align-items: center;
+    margin-top: 24px;
+}
+
+.infobox-content{
+    color: var(--Gray-900, #101828);
+    width: calc(100% - 280px); /* infobox-title의 너비를 제외한 나머지 너비 설정 */
+    /* Text md/Regular */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    align-items: center;
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+}
+.infobox-multiline{
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1 0 0;
+    margin-top: 24px;
+    gap: 32px;
+}
+
+.btn-delete{
+    display: flex;
+width: 143px;
+height: 44px;
+padding: 10px 18px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 8px;
+border: 1px solid var(--Error-500, #F04438);
+background: var(--Error-500, #F04438);
+
+/* Shadow/xs */
+box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+color: var(--White, #FFF);
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 800;
+line-height: 24px; /* 150% */
+}
