@@ -1765,7 +1765,7 @@ input[type="radio"] {
     
 .infobox {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     min-height: 48px;
     gap: 16px;
@@ -1776,11 +1776,12 @@ input[type="radio"] {
 
 .infobox-title {
     color: var(--Gray-700, #344054);
-    width: 280px;
+    width: 200px;
     font-size: 14px;
     font-weight: 800;
     line-height: 20px;
     align-items: center;
+    flex-shrink: 0; /* ✨ 너비 고정! */
 }
 
 .infobox-content {
@@ -1795,6 +1796,49 @@ input[type="radio"] {
     gap: 32px;
     align-items: center;
     justify-content: flex-start;
+}
+
+.infobox-multiline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.infobox-multiline .infobox-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.infobox-multiline .infobox-content .form-control {
+    width: 100%;
+    max-width: 100%;
+    height: 44px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 16px;
+}
+
+.infobox-multiline .infobox-content .btn-custom-purple {
+    width: 100%;
+    height: 44px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #F9F5FF;
+    background: #F9F5FF;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: #6941C6;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px;
+    white-space: nowrap;
+    margin: 0;
 }
 
 .infobox-content .form-control {
@@ -1826,11 +1870,6 @@ input[type="radio"] {
     min-width: 120px;
 }
 
-.position-relative {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
 
 /* 모바일 환경에서의 스타일 */
 @media screen and (max-width: 768px) {
@@ -1868,6 +1907,17 @@ input[type="radio"] {
     }
 
     .infobox-content .form-control {
+        max-width: 100%;
+    }
+
+    .infobox-multiline .infobox-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .infobox-multiline .infobox-content .form-control,
+    .infobox-multiline .infobox-content .btn-custom-purple {
+        width: 100%;
         max-width: 100%;
     }
 
