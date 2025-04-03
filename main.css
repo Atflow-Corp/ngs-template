@@ -1554,7 +1554,9 @@ input[type="radio"] {
     font-size: 14px;
     font-weight: 800;
 }
-
+.left-box .group {
+    margin-bottom: 32px;
+}
 .right-box {
     display: flex;
     flex: 1; /* 비율로 전체 공간을 채우도록 설정 */
