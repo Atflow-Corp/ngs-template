@@ -576,18 +576,45 @@ body, html {
 .checkbox-input {
     width: 16px; /* 체크박스 너비 */
     height: 16px; /* 체크박스 높이 */
-    appearance: none; /* 기본 스타일 제거 */
+    appearance: none !important;
     background-color: #ffffff; /* 체크박스 배경색 */
     border: 1px solid #D0D5DD; /* 체크박스 테두리 색상 */
-    border-radius: 4px; /* 체크박스 모서리 둥글게 */
+    border-radius: 4px !important; /* 체크박스 모서리 둥글게 - 항상 강제 적용 */
     margin-right: 8px; /* 체크박스와 레이블 간격 */
     position: relative; /* 크 모양을 위한 위치 설정 */
+    transition: none !important; /* 트랜지션 효과 제거 */
+    outline: none !important; /* 클릭 시 아웃라인도 제거 */
 }
 
 /* 체크된 상태 스타일 */
 .checkbox-input:checked {
     background-color: #F9F5FF; /* 체크된 배경색 */
     border-color: #7F56D9; /* 체크된 테두리 색상 */
+    border-radius: 4px !important; /* 추가: 체크 시에도 사각형 유지 - 항상 강제 적용 */
+}
+
+/* 호버, 포커스, 액티브 상태에서도 사각형 유지 */
+.checkbox-input:hover,
+.checkbox-input:focus,
+.checkbox-input:active,
+.checkbox-input:checked:hover,
+.checkbox-input:checked:focus,
+.checkbox-input:checked:active {
+    border-radius: 4px !important; /* 항상 사각형 - 강제 적용 */
+    outline: none !important;
+}
+
+/* 특정 상태 조합에서도 확실히 사각형 유지 */
+.checkbox-input:not(:checked),
+.checkbox-input:not(:checked):hover,
+.checkbox-input:not(:checked):focus,
+.checkbox-input:not(:checked):active,
+.checkbox-input:checked,
+.checkbox-input:checked:hover,
+.checkbox-input:checked:focus,
+.checkbox-input:checked:active {
+    border-radius: 4px !important;
+    transition: none !important;
 }
 
 /* 체크 표시 추가 */
@@ -601,6 +628,8 @@ body, html {
     border: solid #7F56D9; /* 체크 표시의 색상 */
     border-width: 0 2px 2px 0; /* 체크 표시의 두께 조정 */
     transform: rotate(45deg); /* 체크 모양을 대각선으로 회전 */
+    border-radius: 0 !important; /* 체크 표시는 완전한 사각형 - 항상 강제 적용 */
+    transition: none !important;
 }
 
 /* 체크박스 레이블 스타일 */
@@ -1027,7 +1056,6 @@ input[type="radio"] {
             justify-content: left; /* 가운데 정렬 */
         }
 
-
 /* Page layout */
  /* 전체 레이아웃 스타일 */
  .main-layout {
@@ -1251,7 +1279,7 @@ input[type="radio"] {
     .btn-group .btn {
         border: 1px solid #D0D5DD;
         background: #FFF;
-        padding: 10px 16px;
+        padding: 10px 14px;
         color: #344054;
         font-size: 14px;
         font-weight: 800;
@@ -1326,7 +1354,7 @@ input[type="radio"] {
         background: #F4EBFF !important;
         border: 1px solid #7F56D9 !important;
     }
-   
+
 /* 모달 내용 왼쪽 정렬 */
 .modal-body {
         text-align: left; /* 전체 모달 내용 왼쪽 정렬 */
@@ -1506,6 +1534,7 @@ input[type="radio"] {
         }
 
 
+
 /* Page layout */
  /* 전체 레이아웃 스타일 */
  .main-layout {
@@ -1554,9 +1583,7 @@ input[type="radio"] {
     font-size: 14px;
     font-weight: 800;
 }
-.left-box .group {
-    margin-bottom: 32px;
-}
+
 .right-box {
     display: flex;
     flex: 1; /* 비율로 전체 공간을 채우도록 설정 */
