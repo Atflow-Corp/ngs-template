@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGS 유전자 검사</title>
+    <link rel="stylesheet" href="main.css">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo" width="50%" height="50%"> <!-- 로고 이미지 경로 -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">NGS 유전자 검사</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">임상 검색</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">서비스 소개</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              사용자 이름
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">로그아웃</a></li>
+              <li><a class="dropdown-item" href="#">내 정보 보기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-box" style="width: calc(1280px); margin: 0 auto;">
+        <ol class="breadcrumb" style="margin: 0;">
+            <li class="breadcrumb-item">NGS 유전자 검사</li>
+        </ol>
+    </div>
+
+    <!-- 메인 레이아웃 -->
+    <div class="main-layout">
+        <!-- 좌측 박스 -->
+        <div class="left-box">
+            <div class="patient-name">
+                환자 이름
+               
+            </div>
+            <div class="group">
+            <div style="margin-top: 32px;">
+                <label class="label">나이</label>
+                <div class="value">29세 (YYYY.MM.DD)</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">성별</label>
+                <div class="value">남</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">휴대폰 번호</label>
+                <div class="value">010-0000-1111</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <label class="label">주소</label>
+                <div class="value">서울시 송파구 잠실동</div>
+            </div>
+        </div>
+        <div class="group">
+            <div>
+                <label class="label">NGS 검사 결과(TNM)</label>
+                <div class="value">T2, N3, M1</div>
+            </div>
+            <div>
+                <label class="label">검체 종류</label>
+                <div class="value">FFPE</div>
+            </div>
+            <div>
+                <label class="label">패널 의뢰 내용</label>
+                <div class="value">고형암</div>
+            </div>
+            <div>
+                <label class="label">유전자 분석 결과 (유전자 - 변이)</label>
+                <div class="value">TP53 - R175H<br>KRAS - G12D<br>PIK3CA - H1047R</div>
+            </div>
+           <!--업데이트 날짜 표시--> <div class="label">25.01.08 업데이트</div>
+        </div>
+            
+        </div> <!-- 좌측 박스 닫기 -->
+
+        <!-- 우측 박스 (진행상황 및 업데이트 내용) -->
+        <div class="right-box" style="flex: 1; padding: 32px; margin-left: auto;">
+            <!-- 첫 번째 카드 영역 -->
+            <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px;">
+                <h6 style="margin: 0; text-align: left;"><b>NGS 검사 결과</b></h6>
+                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-1')">
+                    <img id="toggle-icon-1" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+                </button> <!-- 접기/펼치기 버튼 -->
+            </div>
+            
+            <div id="right-box-card-1" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+                <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; justify-content: space-between; align-items: flex-start; min-width: 300px;">
+                    <img src="img/file_upload.png" alt="파일 업로드 아이콘" style="width: 34px; height: auto; margin-right: 8px;">
+                    <div style="flex: 1; margin-left: 8px;">
+                        <strong>업로드한 검사 결과지</strong>
+                        <p style="margin: 0;">담당자의 승인을 기다리고 있습니다. 승인에는 최대 2일 정도 소요될 수 있으며, 승인이 지연될 경우에는 고객센터로 연락 바랍니다. (02-0000-9999)</p>
+                        <p style="margin: 0;">승인 후에 조건에 부합하는 임상을 추천받을 수 있습니다.</p>
+                    </div>
+                    <div style="margin-left: auto;">
+                        <button class="btn-view">PDF 보기</button> <!-- PDF 보기 버튼 추가 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 두 번째 카드 영역 -->
+            <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; margin-top: 24px;">
+                <h6 style="margin: 0; text-align: left;"><b>검사 의뢰 현황</b></h6>
+                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-2')">
+                    <img id="toggle-icon-2" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+                </button> <!-- 접기/펼치기 버튼 -->
+            </div>
+            
+            <div id="right-box-card-2" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+                <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); display: flex; justify-content: space-between; align-items: flex-start; min-width: 500px;">
+                    <img src="img/file_upload2.png" alt="파일 업로드 아이콘" style="width: 34px; height: auto; margin-right: 8px;">
+                    <div style="flex: 1; margin-left: 8px;">
+                        <strong>검사 의뢰서 제출 완료</strong>
+                        <p style="margin: 0;">승인 완료 (2024.1.19.)</p>
+                    </div>
+                    <div style="margin-left: auto;">
+                        <button class="btn-view">PDF 보기</button> <!-- PDF 보기 버튼 추가 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 세 번째 카드 영역 - 배송 현황 -->
+            <div class="right-box-label" style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; margin-top: 24px;">
+                <h6 style="margin: 0; text-align: left;"><b>배송 현황</b></h6>
+                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCard('right-box-card-3')">
+                    <img id="toggle-icon-3" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+                </button> <!-- 접기/펼치기 버튼 -->
+            </div>
+            
+            <div id="right-box-card-3" class="right-box-card" style="display: flex; flex-direction: column; margin-left: 20px;">
+                <div class="card" style="border: 1px solid var(--Brand-500, #9E77ED); padding: 16px; border-radius: 8px; background: var(--White, #FFF); min-width: 500px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
+                        <img src="img/ngs_pack.svg" alt="배송 아이콘" style="width: 34px; height: auto; margin-right: 8px;">
+                        <div style="flex: 1;">
+                            <strong>주문 접수</strong>
+                            <p style="margin: 0;">접수일자: 2025.04.23 | 주문 시간: 오후 4:29</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 진행 상황 표시 -->
+                    <div class="progress-container">
+                        <div class="progress-step">
+                            <div class="progress-circle progress-on">주문 접수</div>
+                        </div>
+                       
+                        <div class="progress-step">
+                            <div class="progress-circle progress-off">배차 확정</div>
+                        </div>
+                      
+                        <div class="progress-step">
+                            <div class="progress-circle progress-off">배송 시작</div>
+                        </div>
+                       
+                        <div class="progress-step">
+                            <div class="progress-circle progress-off">배송 완료</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--NGS 추천 임상 없음 영역-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
+                <h6 style="margin: 0; text-align: left;"><b>NGS 기반 추천 임상</b></h6>
+            </div>
+
+            <div class="no-results" style="text-align: center; margin-top: 16px;">
+                <h3 class="no-results-title">추천 임상이 없습니다.</h3>
+                <p class="no-results-description">현재 조건에 부합하는 추천 임상이 없습니다. 나중에 다시 확인해주세요.</p>
+            </div>
+
+            <!-- NGS 기반 추천 임상 레이블 및 접기/펼치기 버튼 -->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 24px 0;">
+                <h6 style="margin: 0; text-align: left;"><b>NGS 기반 추천 임상</b></h6>
+                <button class="btn-toggle" style="background: none; border: none; cursor: pointer; margin-left: auto;" onclick="toggleCardList()">
+                    <img id="toggle-icon-list" src="img/chevron-down.png" alt="접기" style="width: 20px; height: auto;">
+                </button> <!-- 접기/펼치기 버튼 -->
+            </div>
+
+            <!-- 카드 목록 -->
+            <div id="card-list" class="card-list" style="display: flex; flex-direction: column; padding: var(--spacing-3xl, 24px) var(--spacing-3xl, 24px) 28px var(--spacing-3xl, 24px); align-items: flex-start; gap: var(--spacing-3xl, 24px); align-self: stretch;">
+                <div class="common-card">
+                    <p class="step trial-phase phase-1">1상</p> <!-- step필드 -->
+                    <p class="name">재발성/불응성 혈액암이 있는 시험대상자를 대상으로 한 PRT2527 단독요법 및 자누브루티닙과의 병용요법에 대한 제1상 공개, 다기관, 안전성 및 유효성 임상시험</p> <!-- name필드 -->
+                    
+                    <div class="chip-container">
+                        <span class="chip" style="background-color: #e0f7fa; color: #00796b;">국외개발</span> <!-- Chip for international_development_category 필드-->
+                        <span class="chip" style="background-color: #ffe0b2; color: #e65100;">PRT2527</span> <!-- Chip for generic_codename 필드 -->
+                        <span class="chip" style="background-color: #f1f8e9; color: #33691e;">파니투무맙</span> <!-- Chip for product_codename 필드-->
+                    </div>
+
+                    <p class="created_by">의뢰자 : 피피디디벨럽먼트피티이엘티디</p> <!-- submitted_by 필드 -->
+                    <p class="approve-date">승인일 : 2023.12.14</p> <!-- approved_at 필드 -->
+                    <p class="trial-organ">실시기관 : 고려대학교 의과대학 부속 구로병원, 삼성서울병원, 국립암센터, 학교법인 고려중앙학원 고려대학교의과대학부속병원, 학교법인가톨릭학원 가톨릭대학교 서울성모병원, 연세대학교의과대학세브란스병원, 재단법인아산사회복지재단서울아산병원, 서울대학교병원</p> <!-- institution_name 필드 -->
+                    
+                    <div style="margin-left: auto;">
+                        <button class="btn-view">상담 신청하기</button> <!-- 상담 신청하기 버튼 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 더 보기 버튼 -->
+            <div style="margin-top: 16px; text-align: center;">
+                <button class="btn-more" onclick="loadMoreCards()" style="display: flex; padding: 12px 20px; justify-content: center; align-items: center; gap: 8px; border-radius: 8px; border: 1px solid var(--Gray-300, #D0D5DD); background: var(--White, #FFF); box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);">
+                    더 보기 (1/22)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 플로팅 버튼 -->
+    <div style="position: fixed; bottom: 20px; right: 20px;">
+        <button style="background: none; border: none; cursor: pointer;">
+            <img src="img/buttonup.png" alt="맨 위로 가기" style="width: 50px; height: auto;">
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function deletePatientInfo() {
+            if (confirm("환자 정보를 삭제하시겠습니까?")) {
+                // 삭제 로직을 여기에 추가
+                alert("환자 정보가 삭제되었습니다."); // 예시로 알림창 표시
+                // 실제 삭제 로직을 구현하려면 서버와의 통신이 필요합니다.
+            }
+        }
+
+        function toggleCard(cardId) {
+            const card = document.getElementById(cardId);
+            let iconId;
+            
+            if (cardId === 'right-box-card-1') {
+                iconId = 'toggle-icon-1';
+            } else if (cardId === 'right-box-card-2') {
+                iconId = 'toggle-icon-2';
+            } else if (cardId === 'right-box-card-3') {
+                iconId = 'toggle-icon-3';
+            }
+            
+            const icon = document.getElementById(iconId);
+            
+            if (card.style.display === 'none') {
+                card.style.display = 'flex'; // Show the card
+                icon.src = 'img/chevron-down.png'; // Change icon to down
+            } else {
+                card.style.display = 'none'; // Hide the card
+                icon.src = 'img/chevron-up.png'; // Change icon to up
+            }
+        }
+
+        function toggleCardList() {
+            const cardList = document.getElementById('card-list');
+            const iconList = document.getElementById('toggle-icon-list');
+            
+            if (cardList.style.display === 'none') {
+                cardList.style.display = 'flex'; // Show the card list
+                iconList.src = 'img/chevron-down.png'; // Change icon to down
+            } else {
+                cardList.style.display = 'none'; // Hide the card list
+                iconList.src = 'img/chevron-up.png'; // Change icon to up
+            }
+        }
+
+        let currentPage = 1; // Track the current page
+        const totalPages = 22; // Total number of pages (example)
+
+        function loadMoreCards() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                // Logic to fetch and append new cards goes here
+                // For example, you could use AJAX to fetch new card data and append it to the card-list
+                console.log(`Loading more cards for page ${currentPage}`);
+                // Update button text if needed
+                document.querySelector('.btn-more').innerText = `더 보기 (${currentPage}/${totalPages})`;
+            } else {
+                alert("더 이상 결과가 없습니다."); // Alert when no more results
+            }
+        }
+    </script>
+</body>
+</html>
