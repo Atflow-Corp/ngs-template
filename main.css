@@ -1152,7 +1152,101 @@ input[type="radio"] {
     border: 1px solid var(--Brand-600, #7F56D9);
     background: var(--Brand-600, #7F56D9);
 }
+.right-box_ngs{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+.progress-on{
+    display: flex;
+    width: 52px;
+    height: 52px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    border-radius: 30px;
+    background: var(--Brand-600, #7F56D9);
+    color: var(--Brand-50, #F9F5FF);
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 140%;
+    padding: 4px 12px;
+}
+.progress-off{
+    display: flex;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #F9F5FF;
+    color: var(--Brand-500, #9E77ED);
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
 
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    margin-left: 35px;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-circle {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.progress-on {
+    background: var(--Brand-600, #7F56D9);
+    color: var(--Brand-50, #F9F5FF);
+    font-weight: 800;
+    line-height: 140%;
+    padding: 4px 12px;
+}
+
+.progress-off {
+    background: #F9F5FF;
+    color: var(--Brand-500, #9E77ED);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.progress-line {
+    width: 20px;
+    height: 2px;
+    background-color: #E9ECEF;
+}
+
+.progress-step:last-child .progress-line {
+    display: none;
+}
  /* 이름 스타일 */
  .patient-name {
     font-size: 30px;
