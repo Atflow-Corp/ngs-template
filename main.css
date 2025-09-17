@@ -293,6 +293,20 @@ box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 .btn-view:hover {
     background: var(--Brand-500, #9E77ED); /* 호버 시 배경색 변화 */
 }
+
+.btn-view:disabled {
+    background: #E9D7FE;
+    border-color: #E9D7FE;
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+.btn-view.completed:disabled,
+.btn-view.completed {
+    background: var(--Success-50, #ECFDF3);
+    border-color: var(--Success-50, #ECFDF3);
+    color: var(--Success-700, #027A48);
+}
 .btn-more {
     border-radius: 8px;
     border: 1px solid var(--Gray-300, #D0D5DD);
