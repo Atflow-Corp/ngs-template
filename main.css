@@ -697,6 +697,9 @@ body, html {
 
 .terms-list li {
     margin-bottom: 16px; /* 항목 간격 */
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* 하이퍼링크 스타일 */
