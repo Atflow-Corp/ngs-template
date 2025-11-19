@@ -651,6 +651,35 @@ body, html {
     color: #344054; /* 텍스트 색상 */
 }
 
+.consent-checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px !important;
+    border: 1px solid #D0D5DD;
+    appearance: none !important;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.consent-checkbox:checked {
+    background-color: #F9F5FF !important;
+    border-color: #7F56D9 !important;
+    border-radius: 4px !important;
+}
+
+.consent-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    width: 5px;
+    height: 8px;
+    border: solid #7F56D9;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    border-radius: 0 !important;
+}
+
 
 /* 구분선 스타일 */
 .divider {
